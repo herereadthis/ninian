@@ -9,6 +9,10 @@ import {
 import {parseJsonOrReturnString} from './utils/string-utils';
 import _ from 'lodash';
 
+import ColorShift from './classes/color-shift';
+import ImageSelector from './classes/image-selector';
+
+import {setTimestamp} from './utils/dom-utils';
 
 import {
     getHitCounterWidth,
@@ -16,11 +20,6 @@ import {
     getHitCounterStorageValidity,
     resetHitCounterParamsStorage
 } from './utils/hit-counter';
-
-import {setTimestamp} from './utils/dom-utils';
-import ColorShift from './utils/color-shift';
-import ImageSelector from './utils/image_selector';
-
 
 // color shift the title
 const colorShiftElement1 = document.getElementById('color-shift-title-1');

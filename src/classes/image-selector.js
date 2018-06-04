@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 import {
     getRandomInteger
-} from './math-utils';
+} from '../utils/math-utils';
 
 import {
     NINETIES_IMAGES_DATA
@@ -12,11 +12,11 @@ import {
     LocalStorageMethods,
     getCacheValidity,
     resetCacheAge
-} from './storage-utils';
+} from '../utils/storage-utils';
 
 import {
     parseJsonOrReturnString
-} from './string-utils';
+} from '../utils/string-utils';
 
 const get90sImageDataFromCache = function() {
     let cacheValid = getCacheValidity();
