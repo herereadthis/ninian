@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack -p",
-    "dev": "webpack-dev-server -d --content-base dist"
+    "dev": "webpack-dev-server -d --content-base dist --port 8090"
   },
   "repository": {
     "type": "git",
