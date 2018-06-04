@@ -1,0 +1,20 @@
+.retro_spriter, .retro_spriter:before, .retro_spriter:after {
+    background-color: @wlg;
+    background-image: url("./images/css/win95_sprites.png");
+    background-size: 12rem 18rem;
+}
+.retro_spriter:before, .retro_spriter:after {
+    display: block;
+    content: "";
+    position: absolute;
+}
+
+// force sibling elements to clear floats
+.clear_floats {
+    &:after {
+        float: none;
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
