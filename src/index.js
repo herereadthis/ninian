@@ -21,6 +21,19 @@ import {
     resetHitCounterParamsStorage
 } from './utils/hit-counter';
 
+import {
+    moveBackground,
+    killScrollListener
+} from './utils/parallax-scroll';
+
+// parallax scroll
+const parallaxScroll = document.getElementsByClassName('parallax_scroll');
+moveBackground(parallaxScroll);
+window.addEventListener('resize', function () {
+    killScrollListener();
+    moveBackground(parallaxScroll);
+}, true);
+
 // color shift the title
 const colorShiftElement1 = document.getElementById('color-shift-title-1');
 const colorShift1 = new ColorShift(
@@ -50,3 +63,7 @@ const hitCounterFigures = hitCounterElement.dataset.figures;
 const hitCounterCount = hitCounterElement.dataset.count;
 hitCounterElement.style.width = getHitCounterWidth(hitCounterFigures);
 makeNumbers(hitCounterElement, hitCounterCount, hitCounterFigures, hitCounterStorageValid);
+
+
+
+
