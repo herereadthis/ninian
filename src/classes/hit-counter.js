@@ -10,7 +10,7 @@ import {
 
 import {
     LocalStorageMethods
-} from './storage-utils';
+} from '../utils/storage-utils';
 
 const hitCounterParams = [
     colorOff,
@@ -18,13 +18,6 @@ const hitCounterParams = [
     numHeight,
     numWidth
 ];
-
-export const getHitCounterWidth = (figures) => {
-    var minWidth = 0.4 + 2.2 * figures;
-    minWidth = parseFloat(minWidth.toPrecision(12));
-
-    return `${minWidth}rem`;
-};
 
 // draws a polygon, given the context, the array of coordinates, and color
 const polyDraw = (context, polyArray, color) => {
@@ -72,6 +65,13 @@ const makeCanvasBG = (digit, hitCounterValidity) => {
         result = lsHitDigit;
     }
     return result;
+};
+
+export const getHitCounterWidth = (figures) => {
+    var minWidth = 0.4 + 2.2 * figures;
+    minWidth = parseFloat(minWidth.toPrecision(12));
+
+    return `${minWidth}rem`;
 };
 
 export const makeNumbers = (element, pageHits, figures, hitCounterValidity) => {
