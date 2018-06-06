@@ -56,6 +56,7 @@ const reset90sImageHistory = function() {
 export default class ImageSelector {
 
     constructor(pathUrl, dataKey, historyKey) {
+        console.log(dataKey)
         this.pathUrl = pathUrl;
         this.dataKey = dataKey;
         this.historyKey = historyKey;

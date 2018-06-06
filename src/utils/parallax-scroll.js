@@ -38,6 +38,7 @@ export const setBackground = (elements) => {
         // scrolling, or 2. the bottom edge of the element has not been
         // exceeded by scrolling
         let {offsetTop, domHeight} = element;
+        /* not working, find out why
         if (dScroll + wHeight > offsetTop && offsetTop + domHeight > dScroll) {
             // scroll speed is a percentage of the actual scrolling
             let scrollSpeed = element.parallaxSpeed / 100;
@@ -48,6 +49,11 @@ export const setBackground = (elements) => {
 
             element.node.style.backgroundPosition = newBgPosition;
         }
+        */
+        let scrollSpeed = element.parallaxSpeed / 100;
+        let yPosition = -1 * Math.round(dScroll * scrollSpeed);
+        let newBgPosition = `${element.bgX} ${yPosition}px`;
+        element.node.style.backgroundPosition = newBgPosition;
     });
 };
 

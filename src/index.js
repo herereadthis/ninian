@@ -21,7 +21,7 @@ import {
     resetHitCounterParamsStorage
 } from './classes/hit-counter';
 
-import RileyFuArt from './utils/riley-fu-art';
+import RileyFuArt from './classes/riley-fu-art';
 
 import {
     moveBackground,
@@ -68,16 +68,6 @@ makeNumbers(hitCounterElement, hitCounterCount, hitCounterFigures, hitCounterSto
 
 
 // riley art
-RileyFuArt.setCanvas();
-let backgroundPosition = RileyFuArt.setBackgroundPosition();
-let backgroundImage = RileyFuArt.getCanvas();
-let rileyFuElement = document.getElementById('riley_fu');
-
-rileyFuElement.style.backgroundPosition = backgroundPosition;
-rileyFuElement.style.backgroundImage = 'url(' + backgroundImage + ')';
-
-window.addEventListener('resize', function () {
-    backgroundPosition = RileyFuArt.setBackgroundPosition();
-    rileyFuElement.style.backgroundPosition = backgroundPosition;
-}, true);
+const rileyFuElement = document.getElementById('riley_fu');
+const rileyFu = new RileyFuArt(rileyFuElement);
 
