@@ -4,8 +4,6 @@
 * Using Webpack4 + ES6 + LESS + PostCSS
 * Boilerplate forked from [alterebro/simple-webpack-boilerplate](https://github.com/alterebro/simple-webpack-boilerplate)
 
-
-
 ### Install
 
 ```bash
@@ -36,5 +34,9 @@ Creates the distributable optimized files on `/dist` folder
 ```sh
 # Build
 npm run build
+# build is in dist folder
+cd dist
+# Will run static site on http://localhost:8092/
+python -m SimpleHTTPServer 8092
 ```
 

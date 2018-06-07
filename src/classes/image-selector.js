@@ -1,8 +1,13 @@
+import axios from 'axios';
 import _ from 'lodash';
 
 import {
     getRandomInteger
 } from '../utils/math-utils';
+
+import {
+    ASSETS_DATA_PATH
+} from '../constants/app-constants';
 
 import {
     NINETIES_IMAGES_DATA
@@ -18,16 +23,36 @@ import {
     parseJsonOrReturnString
 } from '../utils/string-utils';
 
-const get90sImageDataFromCache = function() {
+const get90sImageDataFromCache = async function() {
     let cacheValid = getCacheValidity();
     let imageData = parseJsonOrReturnString(LocalStorageMethods.get(this.dataKey));
 
     if (!cacheValid || !_.isArray(imageData)) {
-        console.log('update cache!');
-        imageData = NINETIES_IMAGES_DATA;
-        resetCacheAge();
-        LocalStorageMethods.set(this.dataKey, JSON.stringify(imageData));
+        // imageData = NINETIES_IMAGES_DATA;
+        let url = `${ASSETS_DATA_PATH}banner-image.json`;
+        console.log(url);
+        let response;
+
+        response = await axios.get(url);
+
+        console.log(response.data)
+
+        LocalStorageMethods.set(this.dataKey, JSON.stringify(response.data));
+
+        // await axios.get(url)
+        //     .then((response) => {
+        //         // store the 90s image data
+
+        //         console.log(response.data)
+
+        //         LocalStorageMethods.set(this.dataKey, JSON.stringify(response.data));
+        //     }
+        // );
+
+        // resetCacheAge();
     }
+
+    console.log(imageData)
 
     return imageData;
 };
@@ -60,11 +85,11 @@ export default class ImageSelector {
         this.pathUrl = pathUrl;
         this.dataKey = dataKey;
         this.historyKey = historyKey;
-        this.set90sImage();
     }
 
-    set90sImage() {
-        const imageData = this::get90sImageDataFromCache();
+    async set90sImage() {
+        const imageData = await this::get90sImageDataFromCache();
+        console.log(imageData)
         const imageCount = imageData.length;
 
         const history = this::get90sImageHistory();
@@ -83,6 +108,7 @@ export default class ImageSelector {
 
         this.image = selectedImage.img;
         this.thumbnail = selectedImage.thumb;
+        this.title = selectedImage.title;
         this.description = selectedImage.description;
     };
 

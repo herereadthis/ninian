@@ -2,10 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TransformFunctionBindPlugin = require('babel-plugin-transform-function-bind');
+const TransformRuntimePlugin = require('babel-plugin-transform-runtime');
 const webpack = require('webpack');
+const appConstants = require('./src/constants/app-constants');
 const date = new Date();
 const timestamp = date.toString();
-
 
 module.exports = {
 
@@ -42,7 +43,13 @@ module.exports = {
 					loader: 'babel-loader',
 					options: {
                         presets: ['env'],
-						plugins: [TransformFunctionBindPlugin]
+						plugins: [
+                            TransformFunctionBindPlugin,
+                            ["transform-runtime", {
+                              "polyfill": false,
+                              "regenerator": true
+                            }]
+                        ]
                     }
 				}
 			},
@@ -65,7 +72,15 @@ module.exports = {
 			inject: 'body',
 			minify: { collapseWhitespace: true, removeComments: true },
 			hash: true,
-			xhtml: true
+			xhtml: true,
+            paths: {
+                assetsImages: appConstants.ASSETS_IMAGES_PATH,
+                assetsData: appConstants.ASSETS_DATA_PATH,
+                site: appConstants.SITE_PATH
+            },
+            assetsImagesPath: appConstants.ASSETS_IMAGES_PATH,
+            assetsDataPath: appConstants.ASSETS_DATA_PATH,
+            sitePath: appConstants.SITE_PATH
 		}),
 		new MiniCssExtractPlugin({
 			filename: "app.min.css"

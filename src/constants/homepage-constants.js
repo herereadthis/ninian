@@ -6,12 +6,6 @@ export const NINETIES_IMG = {
     HISTORY_KEY: 'ninetiesImgHistory'
 };
 
-export const APP_CACHE = {
-    AGE: 'cacheAge',
-    VALIDITY: 'cacheValidity',
-    LIMIT: 86400000
-};
-
 export const NINETIES_IMAGES_DATA = [
     {
         img: 'deep_blue.jpg',

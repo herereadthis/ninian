@@ -50,16 +50,15 @@ const setCanvas = function() {
         let context = canvas.getContext('2d');
 
         rileyColumns.forEach((column, key) => {
-            let colIndex = colLength - key - 1;
             let getColor = rileyColors[column];
             context.fillStyle = getColor;
             context.fillRect(key * colWidth, 0, colWidth, colWidth);
         });
 
-        storedcanvas = JSON.stringify(canvas.toDataURL('image/png'))
+        storedCanvas = JSON.stringify(canvas.toDataURL('image/png'))
 
-        LocalStorageMethods.set(storeRileyShape, storedcanvas);
-        resetCacheAge();
+        LocalStorageMethods.set(storeRileyShape, storedCanvas);
+        // resetCacheAge();
     }
 };
 
@@ -110,7 +109,6 @@ export default class RileyFuArt {
     };
 
     setRileyStyle() {
-        console.log(5432)
         let backgroundImage = this.getCanvas();
         this.element.style.backgroundPosition = this.getBackgroundPosition();
         this.element.style.backgroundImage = 'url(' + backgroundImage + ')';

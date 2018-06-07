@@ -20,7 +20,7 @@ owl: http://www.w3.org/2002/07/owl#">
     <meta property="og:description" name="description"
           content="A website by Jimmy Ha about photography, gardening, and baking."/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="http://herereadthis.com/"/>
+    <meta property="og:url" content="<%= htmlWebpackPlugin.options.paths.site %>"/>
     <!--
     <meta property="og:image" content="/images/branding/herereadthis_fb_320x320.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
@@ -70,7 +70,7 @@ owl: http://www.w3.org/2002/07/owl#">
             <div id="header_panel"
                  data-module="banner_image"
                  ref="bannerImg">
-                <a href="" onClick='' ref="bannerAnchor">
+                <a href="" onClick='' ref="bannerAnchor" id="banner-image-link">
                     <span>Stand by for a 90s image!</span>
                     <img id="banner-image" ref="bannerImage"/>
                 </a>
@@ -91,7 +91,7 @@ owl: http://www.w3.org/2002/07/owl#">
                     <span property="foaf:logo" content="./images/branding/herereadthis_logo.svg"></span>
                     <span> and I </span>
                     <span property="v:title" content="UX Web Developer">make web pages</span>,
-                    <span resource="http://herereadthis.com/" property="v:url foaf:homepage"></span>
+                    <span resource="<%= htmlWebpackPlugin.options.paths.site %>" property="v:url foaf:homepage"></span>
                     specializing in React | Redux | Hapi frameworks.
                     I live and play in the
                     <span property="v:Postal" resource="#/me/address/"
@@ -178,7 +178,7 @@ owl: http://www.w3.org/2002/07/owl#">
                 <tr>
                     <td>
                         <div class="dancing_baby">
-                            <img src="http://assets.herereadthis.com/images/homepage/dancing_baby_170x230.gif"
+                            <img src="<%= htmlWebpackPlugin.options.paths.assetsImages %>homepage/dancing_baby_170x230.gif"
                                  alt="Dancing Baby" /></div>
                         <p style="text-align: center">&amp;nbsp;</p>
                         <div class="centered_image">
@@ -187,39 +187,12 @@ owl: http://www.w3.org/2002/07/owl#">
                     </td>
                     <td>
                         <div class="centered_image">
-                            <img src="http://assets.herereadthis.com/images/homepage/power_rangers_500x375.gif"/>
+                            <img src="<%= htmlWebpackPlugin.options.paths.assetsImages %>homepage/power_rangers_500x375.gif"/>
                         </div>
                     </td>
                 </tr>
             </table>
             <hr class="rainbow_gradient"/>
-        </section>
-    </article>
-
-    <article id="retro_rules" style="background-color: #000;padding-top: 2rem;">
-        <h2 style="display: none;">Here&rsquo;s some good advice I never follow.</h2>
-        <section class="bellmaker_container geocities_me">
-            <h3>Here are 5 rules for life:</h3>
-            <ul>
-                <li>The secret to communication is remembering that what the other person knows is different than what I know.</li>
-                <li>It&rsquo;s okay to have issues; everyone has issues.</li>
-                <li>Acceptance does not require understanding.</li>
-                <li>If I see a problem, and the solution for the problem is for other people to change, then I am the problem.</li>
-                <li>I am the company I keep.</li>
-            </ul>
-            <hr class="rainbow_gradient"/>
-            <h3>Here are 3 rules for Burning Man virgins:</h3>
-            <ul>
-                <li>At some point, all your friends are going to ditch you. It&rsquo;s okay.</li>
-                <li>You are going to meet people who look at the world in an entirely different way than you do, and you may never understand them. It&rsquo;s okay.</li>
-                <li>You have to be able to make your own fun. It won&rsquo;t happen for you, and it&rsquo;s okay.</li>
-            </ul>
-            <hr class="rainbow_gradient"/>
-            <div class="centered_image with_border">
-                <img src="http://assets.herereadthis.com/images/homepage/irene_430x464.png"
-                     width="215"
-                     height="232"/>
-            </div>
         </section>
     </article>
 
@@ -275,13 +248,39 @@ owl: http://www.w3.org/2002/07/owl#">
         </section>
     </article>
 
+    <article id="retro_rules" style="background-color: #000;padding-top: 2rem;">
+        <h2 style="display: none;">Here&rsquo;s some good advice I never follow.</h2>
+        <section class="bellmaker_container geocities_me">
+            <h3>Here are 5 rules for life:</h3>
+            <ul>
+                <li>The secret to communication is remembering that what the other person knows is different than what I know.</li>
+                <li>It&rsquo;s okay to have issues; everyone has issues.</li>
+                <li>Acceptance does not require understanding.</li>
+                <li>If I see a problem, and the solution for the problem is for other people to change, then I am the problem.</li>
+                <li>I am the company I keep.</li>
+            </ul>
+            <hr class="rainbow_gradient"/>
+            <h3>Here are 3 rules for Burning Man virgins:</h3>
+            <ul>
+                <li>At some point, all your friends are going to ditch you. It&rsquo;s okay.</li>
+                <li>You are going to meet people who look at the world in an entirely different way than you do, and you may never understand them. It&rsquo;s okay.</li>
+                <li>You have to be able to make your own fun. It won&rsquo;t happen for you, and it&rsquo;s okay.</li>
+            </ul>
+            <hr class="rainbow_gradient"/>
+            <div class="centered_image with_border">
+                <img src="<%= htmlWebpackPlugin.options.paths.assetsImages %>homepage/irene_430x464.png"
+                     width="215"
+                     height="232"/>
+            </div>
+        </section>
+    </article>
 
     <footer role="contentinfo"
             class="starfield parallax_scroll"
             data-parallax-speed="50">
         <div id="frames_foo">
             <div class="frames_address_bar retro_spriter">
-                <span class="retro_spriter">{location}</span>
+                <span class="retro_spriter"><%= htmlWebpackPlugin.options.paths.site %></span>
             </div>
             <div class="frames_nav_column frames_column">
                 <section>
@@ -306,10 +305,10 @@ owl: http://www.w3.org/2002/07/owl#">
                 </section>
                 <section>
                     <ul class="social_fu" resource="#/me/" typeof="foaf:Person" data-module="social_fu">
-                        <li property="foaf:account" resource="#/me/facebook/" typeof="foaf:OnlineAccount">
-                            <span property="foaf:accountServiceHomepage" resource="https://www.facebook.com/"><span>Facebook</span></span>
-                            <a rel="foaf:homepage" href="https://www.facebook.com/herereadthis"
-                               property="foaf:accountName" title="herereadthis">herereadthis</a>
+                        <li property="foaf:account" resource="#/me/instagram/" typeof="foaf:OnlineAccount">
+                            <span property="foaf:accountServiceHomepage" resource="https://www.instagram.com/"><span>Instagram</span></span>
+                            <a rel="foaf:homepage" href="https://www.instagram.com/herereadthis/"
+                                property="foaf:accountName">herereadthis</a> 
                         </li>
                         <li property="foaf:account" resource="#/me/twitter/" typeof="foaf:OnlineAccount">
                             <span property="foaf:accountServiceHomepage" resource="https://twitter.com/"><span>Twitter</span></span>
@@ -318,14 +317,21 @@ owl: http://www.w3.org/2002/07/owl#">
                         </li>
                         <li property="foaf:account" resource="#/me/github/" typeof="foaf:OnlineAccount">
                             <span property="foaf:accountServiceHomepage" resource="https://github.com/"><span>GitHub</span></span>
-                            <a rel="foaf:homepage" href="https://github.com/herereadthis/redwall"
+                            <a rel="foaf:homepage" href="https://github.com/herereadthis/ninian"
                                property="foaf:accountName">herereadthis</a>
                         </li>
+                        <li property="foaf:account" resource="#/me/facebook/" typeof="foaf:OnlineAccount">
+                            <span property="foaf:accountServiceHomepage" resource="https://www.facebook.com/"><span>Facebook</span></span>
+                            <a rel="foaf:homepage" href="https://www.facebook.com/herereadthis"
+                               property="foaf:accountName" title="herereadthis">herereadthis</a>
+                        </li>
+                        <!--
                         <li property="foaf:account" resource="#/me/pinterest/" typeof="foaf:OnlineAccount">
                             <span property="foaf:accountServiceHomepage" resource="http://pinterest.com/"><span>Pinterest</span></span>
                             <a rel="foaf:homepage" href="http://pinterest.com/herereadthis/"
                                property="foaf:accountName">herereadthis</a>
                         </li>
+                        -->
                     </ul>
                 </section>
             </div>

@@ -1,9 +1,12 @@
 import './app.less';
-import {BANNER_IMAGE_PATH, NINETIES_IMG, APP_CACHE, NINETIES_IMAGES_DATA} from './constants/homepage-constants';
+import {APP_CACHE} from './constants/app-constants';
+import {
+    BANNER_IMAGE_PATH,
+    NINETIES_IMG
+} from './constants/homepage-constants';
 import {getRandomInteger} from './utils/math-utils';
 import {
     LocalStorageMethods,
-    resetCacheAge,
     getCacheValidity
 } from './utils/storage-utils';
 import {parseJsonOrReturnString} from './utils/string-utils';
@@ -47,7 +50,10 @@ colorShift1.makeLetters(colorShiftElement1);
 
 // load a random banner image
 const ninetiesImage = new ImageSelector(BANNER_IMAGE_PATH, NINETIES_IMG.DATA_KEY, NINETIES_IMG.HISTORY_KEY);
+ninetiesImage.set90sImage();
+const bannerImageLink = document.getElementById('banner-image-link');
 const bannerImage = document.getElementById('banner-image');
+bannerImageLink.setAttribute('title', ninetiesImage.title);
 bannerImage.setAttribute('src', ninetiesImage.thumbnailUrl);
 
 // set the timestamp of last updated
