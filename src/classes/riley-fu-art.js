@@ -58,7 +58,7 @@ const setCanvas = function() {
         storedCanvas = JSON.stringify(canvas.toDataURL('image/png'))
 
         LocalStorageMethods.set(storeRileyShape, storedCanvas);
-        // resetCacheAge();
+        resetCacheAge();
     }
 };
 

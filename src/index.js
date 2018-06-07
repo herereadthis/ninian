@@ -50,7 +50,6 @@ colorShift1.makeLetters(colorShiftElement1);
 
 // load a random banner image
 const ninetiesImage = new ImageSelector(BANNER_IMAGE_PATH, NINETIES_IMG.DATA_KEY, NINETIES_IMG.HISTORY_KEY);
-ninetiesImage.set90sImage();
 const bannerImageLink = document.getElementById('banner-image-link');
 const bannerImage = document.getElementById('banner-image');
 bannerImageLink.setAttribute('title', ninetiesImage.title);
