@@ -64,11 +64,10 @@ owl: http://www.w3.org/2002/07/owl#">
             role="banner"
             ref="starfield parallax_scroll"
             class="starfield parallax_scroll"
-            data-parallax-speed="50">
+            data-parallax-speed="-50">
         <div class="bellmaker_container">
             <div id="construction" role="presentation"></div>
-            <div id="header_panel"
-                 data-module="banner_image"
+            <div id="banner_image"
                  ref="bannerImg">
                 <a href="" onClick='' ref="bannerAnchor" id="banner-image-link">
                     <span>Stand by for a 90s image!</span>
@@ -124,7 +123,7 @@ owl: http://www.w3.org/2002/07/owl#">
 
     <article id="retro_art_1"
              class="starfield cinnamon_fantasy parallax_scroll"
-             data-parallax-speed="50"
+             data-parallax-speed="-50"
              data-cinnamon-fantasy ref="starfield">
         <h2>This website is all that and a bag of chips!</h2>
 
@@ -235,7 +234,7 @@ owl: http://www.w3.org/2002/07/owl#">
 
     <article id="retro_art_2"
              class="starfield parallax_scroll"
-             data-parallax-speed="50"
+             data-parallax-speed="-50"
              ref="starfield"
              style={titanticStyle}>
         <h2>Here are some awesome thing!</h2>
@@ -277,7 +276,7 @@ owl: http://www.w3.org/2002/07/owl#">
 
     <footer role="contentinfo"
             class="starfield parallax_scroll"
-            data-parallax-speed="50">
+            data-parallax-speed="-50">
         <div id="frames_foo">
             <div class="frames_address_bar retro_spriter">
                 <span class="retro_spriter"><%= htmlWebpackPlugin.options.paths.site %></span>
@@ -320,12 +319,17 @@ owl: http://www.w3.org/2002/07/owl#">
                             <a rel="foaf:homepage" href="https://github.com/herereadthis/ninian"
                                property="foaf:accountName">herereadthis</a>
                         </li>
+                        <li property="foaf:account" resource="#/me/fourquare/" typeof="foaf:OnlineAccount">
+                            <span property="foaf:accountServiceHomepage" resource="https://fourquare.com/"><span>Foursquare</span></span>
+                            <a rel="foaf:homepage" href="https://foursquare.com/herereadthis"
+                               property="foaf:accountName" title="herereadthis">herereadthis</a>
+                        </li>
+                        <!--
                         <li property="foaf:account" resource="#/me/facebook/" typeof="foaf:OnlineAccount">
                             <span property="foaf:accountServiceHomepage" resource="https://www.facebook.com/"><span>Facebook</span></span>
                             <a rel="foaf:homepage" href="https://www.facebook.com/herereadthis"
                                property="foaf:accountName" title="herereadthis">herereadthis</a>
                         </li>
-                        <!--
                         <li property="foaf:account" resource="#/me/pinterest/" typeof="foaf:OnlineAccount">
                             <span property="foaf:accountServiceHomepage" resource="http://pinterest.com/"><span>Pinterest</span></span>
                             <a rel="foaf:homepage" href="http://pinterest.com/herereadthis/"

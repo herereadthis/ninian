@@ -41,12 +41,8 @@ window.addEventListener('resize', function () {
 
 // color shift the title
 const colorShiftElement1 = document.getElementById('color-shift-title-1');
-const colorShift1 = new ColorShift(
-    colorShiftElement1.textContent,
-    colorShiftElement1.dataset.colorShiftStart,
-    colorShiftElement1.dataset.colorShiftEnd
-);
-colorShift1.makeLetters(colorShiftElement1);
+const colorShift1 = new ColorShift(colorShiftElement1);
+colorShift1.makeLetters();
 
 // load a random banner image
 const ninetiesImage = new ImageSelector(BANNER_IMAGE_PATH, NINETIES_IMG.DATA_KEY, NINETIES_IMG.HISTORY_KEY);
@@ -58,7 +54,6 @@ bannerImage.setAttribute('src', ninetiesImage.thumbnailUrl);
 // set the timestamp of last updated
 let lastUpdatedElement = document.getElementById('last-updated');
 lastUpdatedElement.textContent = setTimestamp(LAST_UPDATED);
-
 const hitCounterStorageValid = getHitCounterStorageValidity();
 if (!hitCounterStorageValid) {
     resetHitCounterParamsStorage();

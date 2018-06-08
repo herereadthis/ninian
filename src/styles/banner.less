@@ -1,15 +1,17 @@
 @sizer: floor((((2 / 12) * 100vw) - 1) * 10) / 10;
 @aHeightSizer: round((@sizer - 0.4rem) * 1.618 * 10) / 10;
 
-[data-module="banner_image"] {
+#banner_image {
     margin-right: 1rem;
 
     a {
-        display: block;
+        display: flex;
         border-width: 0.2rem;
         border-style: solid;
         background-color: @color_maya_blue;
         position: relative;
+        justify-content: center;
+        align-items: center;
 
         &:link, &:visited {
             border-color: @color_link_default;
@@ -38,13 +40,16 @@
         display: block;
         float: left;
         margin: 0;
-        width: floor((((2 / 12) * 100vw) - 1) * 10) / 10;
+        @sizer: floor((((2 / 12) * 100vw) - 1) * 10) / 10;
+        width: @sizer;
 
         a {
+            width: @sizer - 0.4rem;
+            height: @aHeightSizer;
         }
         span {
             font-size: 1.5rem;
-            padding: 7rem 1rem 0 1rem;
+            padding: 0 1rem;
         }
     }
     @media @da_small {
@@ -57,7 +62,7 @@
         }
         span {
             font-size: 1.5rem;
-            padding: 8rem 1rem 0 1rem;
+            padding: 0 1rem;
         }
     }
     @media @da_medium {
@@ -71,7 +76,7 @@
         }
         span {
             font-size: 2rem;
-            padding: 8rem 1.5rem 0 1.5rem;
+            padding: 0 1.5rem;
         }
     }
     @media @da_large {
@@ -84,7 +89,7 @@
         }
         span {
             font-size: 2.5rem;
-            padding: 10rem 2rem 0 2rem;
+            padding: 0 2rem;
         }
     }
     /*

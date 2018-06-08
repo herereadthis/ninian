@@ -4,10 +4,21 @@ const SHORTHAND_HEX_REGEX = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 
 export default class ColorShift {
 
-    constructor(text, colorStart, colorEnd) {
-        this.text = text;
-        this.colorStart = ColorShift.hexToRgb(colorStart);
-        this.colorEnd = ColorShift.hexToRgb(colorEnd);
+    constructor(element, text, colorStart, colorEnd) {
+        this.element = element;
+        this.text = element.textContent;
+        if (!_.isNil(text)) {
+            this.text = text;
+        }
+        let {colorShiftStart, colorShiftEnd} = element.dataset;
+        if (!_.isNil(colorStart)) {
+            colorShiftStart = colorStart;
+        }
+        if (!_.isNil(colorEnd)) {
+            colorShiftEnd = colorEnd;
+        }
+        this.colorStart = ColorShift.hexToRgb(colorShiftStart);
+        this.colorEnd = ColorShift.hexToRgb(colorShiftEnd);
     }
 
     static getFullHex(hex) {
@@ -38,8 +49,8 @@ export default class ColorShift {
         return result;
     }
 
-    makeLetters(element) {
-        element.textContent = '';
+    makeLetters() {
+        this.element.textContent = '';
 
         const colorDiff = {
             r: this.colorEnd.r - this.colorStart.r,
@@ -61,7 +72,7 @@ export default class ColorShift {
             node.style.color = `rgb(${diffR},${diffG},${diffB})`;
             node.textContent = letter;
 
-            element.appendChild(node);
+            this.element.appendChild(node);
         });
     }
 }

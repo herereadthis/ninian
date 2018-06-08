@@ -91,7 +91,7 @@ export default class RileyFuArt {
         let bgWidth = rileyColumns.length * colWidth * -1;
 
         if ( windowWidth < breakpoints[0]) {
-            bgX = bgWidth + (11 / 12) * windowWidth;
+            bgX = bgWidth + (12 / 12) * windowWidth;
         } else if (windowWidth < breakpoints[1]) {
             bgX = bgWidth + ((windowWidth - mediaQueries[0]) / 2) + ((1 / 6) *
                 mediaQueries[0]);

@@ -1,9 +1,18 @@
 #riley_fu {
-
     background-repeat: repeat-y;
     background-color: rgba(115, 194, 251, 0.5);
     position: relative;
     overflow-x: hidden;
+
+    @media @da_baseline {
+        padding: 2rem 0;
+    }
+    @media @da_x_small {
+        padding: 2rem 1.6rem;
+    }
+    @media @da_small {
+        padding: 0;
+    }
 
     h2 {
         padding: 2rem 0 2rem 0;
@@ -13,16 +22,16 @@
     }
     h2, section {
         @media @da_baseline {
-            // padding-right: 100% / 12%;
-            // padding-left: 2rem;
             padding-right: 2rem;
-            padding-left: 100% / 12%;
+            padding-left: 2rem;
+            background-color: rgba(185, 224, 253, 1);
         }
         @media @da_small {
             // padding-right: 100% / 6%;
             // padding-left: 0;
             padding-right: 2rem;
             padding-left: 100% / 6%;
+            background-color: transparent;
         }
         @media @da_medium {
             padding-left: (1 / 6) * @pw_medium + 2rem;
