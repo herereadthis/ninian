@@ -34,14 +34,28 @@
     }
 
     @media @da_baseline {
-        display: none;
+        display: block;
+        position: absolute;
+        z-index: 1;
+
+        @sizer: floor(((25vw) - 1) * 10) / 10;
+        width: @sizer;
+        height: @aHeightSizer + 0.4rem;
+        top: 12.2rem;
+        left: 1.6rem;
+
+        a {
+            width: @sizer - 0.4rem;
+            height: @aHeightSizer;
+        }
     }
     @media @da_x_small {
-        display: block;
+        position: static;
         float: left;
         margin: 0;
         @sizer: floor((((2 / 12) * 100vw) - 1) * 10) / 10;
         width: @sizer;
+        height: auto;
 
         a {
             width: @sizer - 0.4rem;
@@ -106,6 +120,26 @@
         }
     }
     */
+}
+
+#banner_description {
+
+
+    @media @da_baseline {
+        &:before {
+            float: left;
+            display: block;
+            content: "";
+            @sizer: floor(((25vw) - 1) * 10) / 10;
+            width: @sizer + 2rem;
+            height: @aHeightSizer + 0.4rem;
+        }
+    }
+    @media @da_x_small {
+        &:before {
+            display: none;
+        }
+    }
 }
 
 

@@ -1,16 +1,12 @@
 import './app.less';
-import {APP_CACHE} from './constants/app-constants';
 import {
     BANNER_IMAGE_PATH,
     NINETIES_IMG
 } from './constants/homepage-constants';
-import {getRandomInteger} from './utils/math-utils';
 import {
     LocalStorageMethods,
     getCacheValidity
 } from './utils/storage-utils';
-import {parseJsonOrReturnString} from './utils/string-utils';
-import _ from 'lodash';
 
 import ColorShift from './classes/color-shift';
 import ImageSelector from './classes/image-selector';
