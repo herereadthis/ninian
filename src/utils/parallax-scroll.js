@@ -1,8 +1,7 @@
-import _ from 'lodash';
+import _ from './lodash-utils';
 
 export const getBgPosition = (bgStyle) => {
-    var bgPositions, _i;
-    bgPositions = bgStyle.split(' ');
+    var bgPositions = bgStyle.split(' ');
 
     // you can state background position as one value that doubles for x/y.
     // if so, make both values equal.

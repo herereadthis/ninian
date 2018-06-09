@@ -1,3 +1,5 @@
+import _ from '../utils/lodash-utils';
+
 import {
     colorOn,
     colorOff,

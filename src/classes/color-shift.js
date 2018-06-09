@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _ from '../utils/lodash-utils';
 
 const SHORTHAND_HEX_REGEX = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 

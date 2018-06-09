@@ -1,17 +1,14 @@
 import './app.less';
+
 import {
     BANNER_IMAGE_PATH,
     NINETIES_IMG
 } from './constants/homepage-constants';
-import {
-    LocalStorageMethods,
-    getCacheValidity
-} from './utils/storage-utils';
 
 import ColorShift from './classes/color-shift';
 import ImageSelector from './classes/image-selector';
-
-import {setTimestamp} from './utils/dom-utils';
+import RileyFuArt from './classes/riley-fu-art';
+import SimpleDateTime from './classes/simple-date-time';
 
 import {
     getHitCounterWidth,
@@ -20,12 +17,15 @@ import {
     resetHitCounterParamsStorage
 } from './classes/hit-counter';
 
-import RileyFuArt from './classes/riley-fu-art';
+
+
+
 
 import {
     moveBackground,
     killScrollListener
 } from './utils/parallax-scroll';
+
 
 // parallax scroll
 const parallaxScroll = document.getElementsByClassName('parallax_scroll');
@@ -49,21 +49,21 @@ bannerImage.setAttribute('src', ninetiesImage.thumbnailUrl);
 
 // set the timestamp of last updated
 let lastUpdatedElement = document.getElementById('last-updated');
-lastUpdatedElement.textContent = setTimestamp(LAST_UPDATED);
+let lastUpdatedDateTime = new SimpleDateTime(new Date(LAST_UPDATED));
+lastUpdatedElement.setAttribute('datetime', lastUpdatedDateTime.getFormattedDate());
+lastUpdatedElement.textContent = lastUpdatedDateTime.getFormattedDate('wwww d MMMM, yyyy');
+
+// create the hit counter
 const hitCounterStorageValid = getHitCounterStorageValidity();
 if (!hitCounterStorageValid) {
     resetHitCounterParamsStorage();
 }
-
-// create the hit counter
 const hitCounterElement = document.getElementById('hit-counter-container');
 const hitCounterFigures = hitCounterElement.dataset.figures;
 const hitCounterCount = hitCounterElement.dataset.count;
 hitCounterElement.style.width = getHitCounterWidth(hitCounterFigures);
 makeNumbers(hitCounterElement, hitCounterCount, hitCounterFigures, hitCounterStorageValid);
 
-
 // riley art
 const rileyFuElement = document.getElementById('riley_fu');
 const rileyFu = new RileyFuArt(rileyFuElement);
-
