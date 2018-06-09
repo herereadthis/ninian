@@ -49,13 +49,16 @@
             height: @aHeightSizer;
         }
     }
+    @media @da_2x_small {
+        @sizer: floor((((2 / 12) * 100vw) - 1) * 10) / 10;
+        width: @sizer;
+        height: auto;
+        top: 13.2rem;
+    }
     @media @da_x_small {
         position: static;
         float: left;
         margin: 0;
-        @sizer: floor((((2 / 12) * 100vw) - 1) * 10) / 10;
-        width: @sizer;
-        height: auto;
 
         a {
             width: @sizer - 0.4rem;
@@ -69,6 +72,7 @@
     @media @da_small {
         @sizer: floor((((2 / 12) * @pw_small) - 1) * 10) / 10;
         width: @sizer;
+        top: auto;
 
         a {
             width: @sizer - 0.4rem;
@@ -124,21 +128,28 @@
 
 #banner_description {
 
-
     @media @da_baseline {
+        @sizer: floor(((25vw) - 1) * 10) / 10;
+        min-height: @aHeightSizer;
+
         &:before {
             float: left;
             display: block;
             content: "";
-            @sizer: floor(((25vw) - 1) * 10) / 10;
             width: @sizer + 2rem;
-            height: @aHeightSizer + 0.4rem;
+            height: @aHeightSizer + 0.2rem;
         }
+    }
+    @media @da_2x_small {
+        @sizer: floor((((2 / 12) * 100vw) - 1) * 10) / 10;
+        // min-height: @aHeightSizer + 0.4rem;
+
     }
     @media @da_x_small {
         &:before {
             display: none;
         }
+        min-height: 0;
     }
 }
 

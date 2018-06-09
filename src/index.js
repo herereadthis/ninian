@@ -19,7 +19,9 @@ import {
 
 
 
-
+import {
+    clearStorageLink
+} from './utils/storage-utils';
 
 import {
     moveBackground,
@@ -67,3 +69,9 @@ makeNumbers(hitCounterElement, hitCounterCount, hitCounterFigures, hitCounterSto
 // riley art
 const rileyFuElement = document.getElementById('riley_fu');
 const rileyFu = new RileyFuArt(rileyFuElement);
+
+// clear local storage
+const clearStorageElement = document.getElementById('clear-local-storage');
+console.log(clearStorageElement.textContent);
+clearStorageLink(clearStorageElement);
+

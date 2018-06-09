@@ -37,6 +37,12 @@ export const NINETIES_IMAGES_DATA = [
         title: 'Harry Potter and the Philosopher&rsquo;s Stone published',
         date: '1997-06-26'
     },
+    {
+        img: 'mike_tyson.jpg',
+        thumb: 'mike_tyson-thumb.jpg',
+        title: 'Mike Tyson vs Evander Holyfield in The Bite Fight',
+        date: '1997-06-28'
+    },
     {  
         img: 'mars_pathfinder.jpg',
         thumb: 'mars_pathfinder-thumb.jpg',
@@ -54,6 +60,12 @@ export const NINETIES_IMAGES_DATA = [
         thumb: 'princess_diana-thumb.jpg',
         title: 'Princess Diana dies in a car crash',
         date: '1997-08-31'
+    },
+    {
+        img: 'scrunchies.jpg',
+        thumb: 'scrunchies-thumb.jpg',
+        title: 'Scrunchies were a hot fashion trend',
+        date: '1997'
     },
     {  
         img: 'south_park.jpg',

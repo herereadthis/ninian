@@ -51,3 +51,10 @@ export const getCacheValidity = () => {
     }
     return result;
 };
+
+export const clearStorageLink = (domElement) => {
+    domElement.addEventListener('click', function(event){
+        event.preventDefault();
+        localStorage.clear();
+    });
+};
