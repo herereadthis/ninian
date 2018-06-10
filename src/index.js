@@ -46,8 +46,15 @@ colorShift1.makeLetters();
 const ninetiesImage = new ImageSelector(BANNER_IMAGE_PATH, NINETIES_IMG.DATA_KEY, NINETIES_IMG.HISTORY_KEY);
 const bannerImageLink = document.getElementById('banner-image-link');
 const bannerImage = document.getElementById('banner-image');
-bannerImageLink.setAttribute('title', ninetiesImage.title);
-bannerImage.setAttribute('src', ninetiesImage.thumbnailUrl);
+ninetiesImage.setTitle(bannerImageLink);
+ninetiesImage.setSrc(bannerImage);
+
+bannerImageLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    ninetiesImage.set90sImage();
+    ninetiesImage.setTitle(bannerImageLink);
+    ninetiesImage.setSrc(bannerImage);
+})
 
 // set the timestamp of last updated
 let lastUpdatedElement = document.getElementById('last-updated');
@@ -74,4 +81,9 @@ const rileyFu = new RileyFuArt(rileyFuElement);
 const clearStorageElement = document.getElementById('clear-local-storage');
 console.log(clearStorageElement.textContent);
 clearStorageLink(clearStorageElement);
+
+// color shift depression popup
+const colorShiftElement2 = document.getElementById('color-shift-title-2');
+const colorShift2 = new ColorShift(colorShiftElement2);
+colorShift2.makeLetters();
 

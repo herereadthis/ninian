@@ -1,28 +1,103 @@
-@serif: 'Times New Roman', Times, serif;;
+@serif: 'Times New Roman', Times, serif;
+
+
 
 #retro_rules {
     background-image: url("./images/css/thetropics_shores_9189_cartoon1_315x237.gif");
 
-    .geocities_me {
-        h3 {
-            padding: 2rem 0;
-            font: normal normal bold 2.4rem/2.8rem @serif;
+    h3 {
+        padding: 2rem 0;
+        font: normal normal bold 2.4rem/2.8rem @serif;
+    }
+    li {
+        padding-left: 4rem;
+        font: normal normal bold 1.6rem/1.6rem @serif;
+    }
 
+    @media @da_large {
+        h3 {
+            padding: 2.4rem 0;
+            font-size: 3rem;
+            line-height: 4rem;
         }
         li {
-            padding-left: 4rem;
-            font: normal normal bold 1.6rem/1.6rem @serif;
-        }
-        p {
-            padding-bottom: 2rem;
-            font: normal normal normal 1.6rem/2rem @serif;
+            font-size: 2rem;
+            line-height: 2rem;
         }
     }
-    .depression-filter {
-        padding:  0 2rem;
+
+    .filter {
         background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(50px);  
         -webkit-backdrop-filter: blur(50px);
         border-radius: 0 4rem;
+
+        @media @da_baseline {
+            padding:  0 2rem;
+        }
+        @media @da_medium {
+            padding:  1rem 4rem;
+        }
+        @media @da_large {
+            padding:  2rem 6rem;
+        }
+
+        li {
+            list-style-type: decimal;
+            background-image: none;
+            margin-left: 2rem;
+            padding: 0;
+        }
+    }
+    .depression-hole, .depression-help {
+        h1 {
+            margin: 0 1rem;
+            font-size: 2.8rem;
+            line-height: 5.6rem;
+            text-align: center;
+        }
+        h3 {
+            font-size: 2.1rem;
+            line-height: 2.8rem;
+        }
+        p, li {
+            font-weight: normal;
+            font-size: 1.4rem;
+            line-height: 2.1rem;
+        }
+        ol, p {
+            padding-bottom: 2.1rem;
+        }
+        p {
+            margin: 0 1rem;
+        }
+
+        @media @da_large {
+            h3 {
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+            }
+            p, li {
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+            }
+            ol, p {
+                padding-bottom: 2.4rem;
+            }
+        }
+    }
+
+    .depression-hole {
+        background-image: url("./images/css/cloud_216x144.gif");
+        h3, p, li {
+            font-family: 'Georgia', @serif;
+        }
+    }
+
+    .depression-help {
+        h3, p, li {
+            color: #FF0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
     }
 }   

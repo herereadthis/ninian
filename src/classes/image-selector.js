@@ -93,4 +93,12 @@ export default class ImageSelector {
     get thumbnailUrl() {
         return `${this.pathUrl}${this.thumbnail}`;
     }
+
+    setTitle(element) {
+        element.setAttribute('title', this.title);
+    }
+
+    setSrc(element) {
+        element.setAttribute('src', this.thumbnailUrl);
+    }
 }
