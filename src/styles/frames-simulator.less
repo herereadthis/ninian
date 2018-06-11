@@ -1,3 +1,5 @@
+@import (reference) './global-variables.less';
+
 @lg000: linear-gradient(0deg, #000 0%, #000 100%);
 @lgwlg: linear-gradient(0deg, @wlg 0%, @wlg 100%);
 @lgwdg: linear-gradient(0deg, @wdg 0%, @wdg 100%);
@@ -229,7 +231,7 @@
         padding-bottom: 5rem;
         background-image:
         linear-gradient(90deg, #FFF 0, #FFF 0.1rem, @wlg 0.1rem, @wlg 0.2rem, #FFF 0.2rem),
-        url("./images/css/fire_600x50.gif");
+        url("@{cssImagePath}fire_600x50.gif");
         background-size: 0.3rem 100%, 60rem 5rem;
     }
 }
@@ -414,9 +416,9 @@
 .frames_start_bar {
     height: 1.7rem;
     background-image:
-    url("./images/css/win95_sprites.png"),
-    url("./images/css/win95_sprites.png"),
-    url("./images/css/win95_sprites.png"),
+    url("@{cssImagePath}win95_sprites.png"),
+    url("@{cssImagePath}win95_sprites.png"),
+    url("@{cssImagePath}win95_sprites.png"),
     linear-gradient(180deg, @wdg 0.0rem, @wdg 0.1rem,
     @wlg 0.1rem, @wlg 1.5rem, #FFF 1.5rem, #FFF 1.6rem,
     @wlg 1.6rem, @wlg 1.6rem);

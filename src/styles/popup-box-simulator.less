@@ -1,3 +1,6 @@
+@import './global-mixins.less';
+@import (reference) './global-variables.less';
+
 @lg000: linear-gradient(0deg, #000 0%, #000 100%);
 @lgwlg: linear-gradient(0deg, @wlg 0%, @wlg 100%);
 @lgwdg: linear-gradient(0deg, @wdg 0%, @wdg 100%);
@@ -16,7 +19,7 @@
             @lg000,@lg000,@lgwlg,@lgwlg,@lgwdg,@lgwdg,@lgFFF,@lgFFF,
             @lgwlg,@lgwlg,@lgwlg,@lg008,@lgwlg,
             @lgFFF,@lgFFF,@lgwdg,@lgwdg,@lgwlg,@lgwlg,@lg000,@lg000,
-            url("./images/css/cloud_216x144.gif");
+            url("@{cssImagePath}cloud_216x144.gif");
     background-size:
             100% 0.1rem,0.1rem 100%,100% 0.1rem,0.1rem 100%,
             100% 0.2rem,0.2rem 100%,100% 0.2rem,0.2rem 100%,

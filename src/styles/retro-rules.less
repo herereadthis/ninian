@@ -1,9 +1,9 @@
+@import (reference) './global-variables.less';
+
 @serif: 'Times New Roman', Times, serif;
 
-
-
 #retro_rules {
-    background-image: url("./images/css/thetropics_shores_9189_cartoon1_315x237.gif");
+    background-image: url("@{cssImagePath}thetropics_shores_9189_cartoon1_315x237.gif");
 
     h3 {
         padding: 2rem 0;
@@ -88,7 +88,8 @@
     }
 
     .depression-hole {
-        background-image: url("./images/css/cloud_216x144.gif");
+        padding-bottom: 0.4rem;
+        background-image: url("@{cssImagePath}southbeach_marina_6930_coral_135x135.jpg");
         h3, p, li {
             font-family: 'Georgia', @serif;
         }

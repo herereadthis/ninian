@@ -1,3 +1,5 @@
+@import (reference) './global-variables.less';
+
 @sizer: floor((((2 / 12) * 100vw) - 1) * 10) / 10;
 @aHeightSizer: round((@sizer - 0.4rem) * 1.618 * 10) / 10;
 
@@ -223,7 +225,7 @@
     }
     #construction {
         height: 5rem;
-        background: transparent url("./images/css/under_construction_572x44.gif") scroll no-repeat 50% 0.3rem;
+        background: transparent url("@{cssImagePath}under_construction_572x44.gif") scroll no-repeat 50% 0.3rem;
 
         @media @da_baseline {
         }

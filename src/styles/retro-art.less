@@ -1,3 +1,5 @@
+@import (reference) './global-variables.less';
+
 #retro_art_1, #retro_art_2 {
     > h2 {
         color: #FF0;
@@ -165,7 +167,7 @@
         content: "";
         display: block;
         clear: both;
-        background: transparent url("./images/css/unicorn_623x150.jpg") scroll repeat 50% 100%;
+        background: transparent url("@{cssImagePath}unicorn_623x150.jpg") scroll repeat 50% 100%;
         background-size: contain;
         width: 100%;
     }
