@@ -288,26 +288,6 @@ owl: http://www.w3.org/2002/07/owl#">
                 <a class="popup_button retro_spriter popup_resize">Resize</a>
                 <a class="popup_button retro_spriter popup_minimize">Minimize</a>
             </div>
-            <hr class="rainbow_gradient"/>
-            <div class="depression-help filter">
-                <h3>How can I help someone with depression?</h3>
-                <p><strong>(Especially if this person doesn&rsquo;t want help?)</strong></p>
-                <p>You can&rsquo;t force a person to accept your help, but you can let them know they are not alone. If someone with depression is willing to talk to you, then  remember a few things:</p>
-                <ol>
-                    <li>Don&rsquo;t try to fix their problems and avoid giving advice, i.e., &ldquo;If I were you, I&rsquo;d&hellip;&rdquo;</li>
-                    <li>Don&rsquo;t say patronizing shit like, &ldquo;Everything&rsquo;s gonna work out,&rsquo; or &ldquo;It&rsquo;ll get better.&rdquo;</li>
-                    <li>The goal isn&rsquo;t to make yourself feel better. You&rsquo;re not a hero to the rescue. This isn&rsquo;t about you.</li>
-                    <li>You are not their clinical therapist. Don&rsquo;t diagnose them.</li>
-                </ol>
-                <p><strong>Your goal should be to make sure they are safe.</strong></p>
-                <ol>
-                    <li>Ask them what they&rsquo;ve been eating, and how much sleep they&rsquo;re   getting. Ask them what they are doing tomorrow or the day after. <em>It&rsquo;s important to hear about concrete plans in the near future.</em></li>
-                    <li>Ask &ldquo;How&rdquo; or &ldquo;What&rdquo;  questions instead of &ldquo;Why&rdquo; questions. For example, &ldquo;What&rsquo;s making you feel this way?&rdquo; is much better than &ldquo;Why are you sad?&rdquo;</li>
-                    <li>A depressed person&rsquo;s sense of reality is distorted. They might say things that aren&rsquo;t true, e.g., &ldquo;I can&rsquo;t do anything right.&rdquo; But debating facts with them might just cause them to shut down. Instead, you can validate feelings: &ldquo;It must be overwhelming&hellip;&rdquo;</li>
-                    <li>While it&rsquo;s better to do more listening than talking, practice some self-care. You are not someone else&rsquo;s verbal punching bag.</li>
-                    <li>Finally, if they are alone and you are reasonably sure they will harm themselves, then call emergency services.</li>
-                </ol>
-            </div>
 
             <hr class="rainbow_gradient"/>
 
@@ -323,32 +303,41 @@ owl: http://www.w3.org/2002/07/owl#">
                         <div
                             class="nineties_img_head_button mac_os8_sprites minimize"
                             onClick={this.goBackToHomepage}></div>
-                            <!--
-                        <div class="nineties_img_head_text mac_os8_sprites pictures"
-                            onClick={this.goBackToHomepage} />
-                            -->
-                        <div class="nineties_img_head_text free_text pictures">
-                            <span>Empty Box</span>
+                        <div class="nineties_img_head_text">
+                            <span>Under Construction!</span>
                         </div>
                     </div>
-                    <div class="nineties_img_container">
-
-                    <div class="nineties_img_item clear_floats">
+                    <div class="nineties_img_container scrollable">
                         <div class="nineties_img_item_scroll_container"
-                                id="nineties_img_item_scroll_container"
-                                onScroll={this.handleScroll.bind(this)}
-                                ref="scrollBoxContainer">
-                            <section class="nineties_img_item_scroll"
-                                        id="nineties_img_item_scroll"
-                                ref="scrollBox">
+                            id="nineties_img_item_scroll_container"
+                            onScroll={this.handleScroll.bind(this)}
+                            ref="scrollBoxContainer">
     
     
-                                <!--
-                                <div class="mac_os8_button">
-                                    <a href="">View More...</a>
-                                </div>
-                                -->
-                            </section>
+                            <div class="depression-help">
+                                <h3>How can I help someone with depression?</h3>
+                                <p><strong>(Especially if this person doesn&rsquo;t want help?)</strong></p>
+                                <p>You can&rsquo;t force a person to accept your help, but you can let them know they are not alone. If someone with depression is willing to talk to you, then  remember a few things:</p>
+                                <ol>
+                                    <li>Don&rsquo;t try to fix their problems and avoid giving advice, i.e., &ldquo;If I were you, I&rsquo;d&hellip;&rdquo;</li>
+                                    <li>Don&rsquo;t say patronizing shit like, &ldquo;Everything&rsquo;s gonna work out,&rsquo; or &ldquo;It&rsquo;ll get better.&rdquo;</li>
+                                    <li>The goal isn&rsquo;t to make yourself feel better. You&rsquo;re not a hero to the rescue. This isn&rsquo;t about you.</li>
+                                    <li>You are not their clinical therapist. Don&rsquo;t diagnose them.</li>
+                                </ol>
+                                <p><strong>Your goal should be to make sure they are safe.</strong></p>
+                                <ol>
+                                    <li>Ask them what they&rsquo;ve been eating, and how much sleep they&rsquo;re   getting. Ask them what they are doing tomorrow or the day after. <em>It&rsquo;s important to hear about concrete plans in the near future.</em></li>
+                                    <li>Ask &ldquo;How&rdquo; or &ldquo;What&rdquo;  questions instead of &ldquo;Why&rdquo; questions. For example, &ldquo;What&rsquo;s making you feel this way?&rdquo; is much better than &ldquo;Why are you sad?&rdquo;</li>
+                                    <li>A depressed person&rsquo;s sense of reality is distorted. They might say things that aren&rsquo;t true, e.g., &ldquo;I can&rsquo;t do anything right.&rdquo; But debating facts with them might just cause them to shut down. Instead, you can validate feelings: &ldquo;It must be overwhelming&hellip;&rdquo;</li>
+                                    <li>While it&rsquo;s better to do more listening than talking, practice some self-care. You are not someone else&rsquo;s verbal punching bag.</li>
+                                    <li>Finally, if they are alone and you are reasonably sure they will harm themselves, then call emergency services.</li>
+                                </ol>
+                            </div>
+                            <!--
+                            <div class="mac_os8_button">
+                                <a href="">View More...</a>
+                            </div>
+                            -->
                         </div>
     
                         <div class="mac_os8_scroll_bar scroll_enabled">
@@ -379,7 +368,6 @@ owl: http://www.w3.org/2002/07/owl#">
                                 onClick="this.handleClick.bind(this, 'next')"></a>
                         </div>
                         -->
-                        </div>
                     </div>
                 </div>
             </div>

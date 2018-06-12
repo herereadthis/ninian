@@ -20,15 +20,11 @@
 @lg66C: linear-gradient(0deg, #66C 0%, #66C 100%);
 
 .nineties_img_box {
-
     .bellmaker_container {
         position: relative;
 
         @media @da_baseline {
-            width: calc(~"100% - 2rem");
-            height: calc(~"100% - 2rem");
-            min-height: 30rem;
-            margin: 1rem;
+            width: 100%;
         }
         @media @da_small {
             width: @pw_small;
@@ -54,29 +50,6 @@
             @lg000, @lg000, @lg000, @lg000,
             @lg000, @lg000,
             @lgCCC;
-        /*
-                background-size:
-                    calc(~"100% - 1.4rem") calc(~"100% - 2.9rem"),
-                    calc(~"100% - 1.2rem") calc(~"100% - 2.7rem"),
-                    calc(~"100% - 1.1rem") 0.1rem, 0.1rem calc(~"100% - 2.6rem"),
-                    calc(~"100% - 1.1rem") 0.1rem, 0.1rem calc(~"100% - 2.6rem"),
-                    calc(~"100% - 0.4rem") 0.1rem, 0.1rem calc(~"100% - 0.4rem"),
-                    calc(~"100% - 0.4rem") 0.1rem, 0.1rem calc(~"100% - 0.4rem"),
-                    100% 0.1rem, 0.1rem 100%, 100% 0.1rem, 0.1rem 100%,
-                    100% 0.1rem, 0.1rem 100%,
-                    calc(~"100% - 0.3rem") calc(~"100% - 0.3rem");
-
-                background-position:
-                    0.6rem 2.2rem,
-                    0.5rem 2.1rem,
-                    0.4rem 2rem, 0.4rem 2rem,
-                    0.4rem calc(~"100% - 0.5rem"), calc(~"100% - 0.6rem") 2.1rem,
-                    0.1rem 0.1rem, 0.1rem 0.1rem,
-                    0.2rem calc(~"100% - 0.2rem"), calc(~"100% - 0.2rem") 0.2rem,
-                    -0.1rem 0, 0 -0.1rem, -0.1rem calc(~"100% - 0.1rem"), calc(~"100% - 0.1rem") -0.1rem,
-                    0.2rem 100%, 100% 0.2rem,
-                    0.1rem 0.1rem;
-                    */
 
         background-size:
             calc(~"100% - 2.6rem") calc(~"100% - 5.8rem"),
@@ -108,58 +81,32 @@
     }
 }
 
-// wrapper for both item and listin routes
-.nineties_img_container {
-    position: absolute;
-    //top: 2.2rem;
-    //right: 0.8rem;
-    //bottom: 0.7rem;
-    //left: 0.6rem;
-    top: 4.4rem;
-    right: 1.4rem;
-    bottom: 1.4rem;
-    left: 1.2rem;
-}
-
-
-
 .nineties_img_header {
-    position: absolute;
-    //top: 0.4rem;
-    //right: 0.5rem;
-    //left: 0.4rem;
-    //height: 1.3rem;
-    top: 0.8rem;
-    right: 1.0rem;
-    left: 0.8rem;
+    position: relative;
+    padding-top: 0.8rem;
+    margin-right: 6.8rem;
+    margin-left: 3.4rem;
     height: 2.6rem;
+    display: flex;
+    justify-content: center;
 
     background-image:
         @lgFFF, @lg999, @lgFFF, @lg999,
         @lgFFF, @lg999, @lgFFF, @lg999,
         @lgFFF, @lg999, @lgFFF, @lg999;
 
-    //background-size:
-    //    calc(~"100% - 5.1rem") 0.2rem;
-
-    //background-position:
-    //    1.7rem 0.0rem, 1.8rem 0.1rem, 1.7rem 0.2rem, 1.8rem 0.3rem,
-    //    1.7rem 0.4rem, 1.8rem 0.5rem, 1.7rem 0.6rem, 1.8rem 0.7rem,
-    //    1.7rem 0.8rem, 1.8rem 0.9rem, 1.7rem 1.0rem, 1.8rem 1.1rem;
-
-    background-size: calc(~"100% - 10.2rem") 0.2rem;
+    background-size: calc(~"100% - 1.8rem") 0.2rem;
 
     background-position:
-        3.4rem 0.0rem, 3.6rem 0.2rem, 3.4rem 0.4rem, 3.6rem 0.6rem,
-        3.4rem 0.8rem, 3.6rem 1.0rem, 3.4rem 1.2rem, 3.6rem 1.4rem,
-        3.4rem 1.6rem, 3.6rem 1.8rem, 3.4rem 2.0rem, 3.6rem 2.2rem;
+        0.8rem 0.8rem, 1.0rem 1.0rem, 0.8rem 1.2rem, 1.0rem 1.4rem,
+        0.8rem 1.6rem, 1.0rem 1.8rem, 0.8rem 2.0rem, 1.0rem 2.2rem,
+        0.8rem 2.4rem, 1.0rem 2.6rem, 0.8rem 2.8rem, 1.0rem 3.0rem;
 
     background-repeat: no-repeat;
 }
 
 .nineties_img_head_button {
-    //width: 1.3rem;
-    //height: 1.3rem;
+    top: 0.8rem;
 
     &, &:after {
         width: 2.6rem;
@@ -175,16 +122,16 @@
         }
     }
     &.close {
-        left: 0;
+        left: -2.6rem;
         background-position: 0 0;
     }
     &.resize {
-        right: 3.2rem;
+        right: -2.6rem;
         //background-position: -2rem 0;
         background-position: -4rem 0;
     }
     &.minimize {
-        right: 0;
+        right: -5.8rem;
         //background-position: -4rem 0;
         background-position: -8rem 0;
     }
@@ -205,84 +152,33 @@
 
 @head_text_padding: 1.4rem;
 @pictures: 20rem;
-@kelly-kapowski: 19.4rem + @head_text_padding;
-@macarena: 18.4rem + @head_text_padding;
-@motorola-startac: 22.8rem + @head_text_padding;
-@notorious-big: 20.2rem + @head_text_padding;
-@princess-diana: 18.6rem + @head_text_padding;
-@tamagotchi: 15.1rem + @head_text_padding;
-@titanic: 8.6rem + @head_text_padding;
-@x-files: 8.9rem + @head_text_padding;
 
 .nineties_img_head_text {
-    //height: 1.3rem;
     height: 2.6rem;
-    position: absolute;
+    padding-right: 0.6rem;
+    padding-left: 0.6rem;
+    text-align: center;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    letter-spacing: 0.1rem;
+    background-image: @lgCCC, @lgCCC, @lgCCC, @lgCCC,
+    @lgCCC, @lgCCC, @lgCCC, @lgCCC,
+    @lgCCC, @lgCCC, @lgCCC, @lgCCC;
+    background-repeat: no-repeat;
+    background-size: calc(~"100% - 0.2rem") 0.2rem;
 
-    &.pictures {
-        left: 50%;
-        //width: 6rem;
-        //margin-left: -3rem;
-        //background-position: 0 -2rem;
-        width: 12rem;
-        margin-left: -6rem;
-        background-position: 0 -4rem;
-    }
-    &.free_text {
-        left: 50%;
-        text-align: center;
-        //width: 12rem;
-        margin-left: -6rem;
-        font-size: 2.4rem;
-        line-height: 2.6rem;
-        letter-spacing: 0.1rem;
-        background-image: @lgCCC, @lgCCC, @lgCCC, @lgCCC,
-        @lgCCC, @lgCCC, @lgCCC, @lgCCC,
-        @lgCCC, @lgCCC, @lgCCC, @lgCCC;
-        background-repeat: no-repeat;
-        background-size: calc(~"100% - 0.2rem") 0.2rem;
+    background-position:
+        0.0rem 0.0rem, 0.2rem 0.2rem, 0.0rem 0.4rem, 0.2rem 0.6rem,
+        0.0rem 0.8rem, 0.2rem 1.0rem, 0.0rem 1.2rem, 0.2rem 1.4rem,
+        0.0rem 1.6rem, 0.2rem 1.8rem, 0.0rem 2.0rem, 0.2rem 2.2rem;
+}
 
-        background-position:
-            0.0rem 0.0rem, 0.2rem 0.2rem, 0.0rem 0.4rem, 0.2rem 0.6rem,
-            0.0rem 0.8rem, 0.2rem 1.0rem, 0.0rem 1.2rem, 0.2rem 1.4rem,
-            0.0rem 1.6rem, 0.2rem 1.8rem, 0.0rem 2.0rem, 0.2rem 2.2rem;
+.nineties_img_container {
+    position: relative;
+    padding: 1rem 1.4rem 1.4rem 1.2rem;
 
-        &.kelly-kapowski {
-            width: @kelly-kapowski;
-            margin-left: -0.5 * @kelly-kapowski;
-        }
-        &.macarena {
-            width: @macarena;
-            margin-left: -0.5 * @macarena;
-        }
-        &.motorola-startac {
-            width: @motorola-startac;
-            margin-left: -0.5 * @motorola-startac;
-        }
-        &.notorious-big {
-            width: @notorious-big;
-            margin-left: -0.5 * @notorious-big;
-        }
-        &.princess-diana {
-            width: @princess-diana;
-            margin-left: -0.5 * @princess-diana;
-        }
-        &.tamagotchi {
-            width: @tamagotchi;
-            margin-left: -0.5 * @tamagotchi;
-        }
-        &.titanic {
-            width: @titanic;
-            margin-left: -0.5 * @titanic;
-        }
-        &.x-files {
-            width: @x-files;
-            margin-left: -0.5 * @x-files;
-        }
-        &.pictures {
-            width: @pictures;
-            margin-left: -0.5 * @pictures;
-        }
+    &.scrollable {
+        padding-right: 4.4rem;
     }
 }
 
@@ -332,7 +228,7 @@
             width: 2rem;
             height: 4.6rem;
             top: 0;
-            position: absolute;
+            position: relative;
         }
         &:before {
             left: -2rem;
@@ -346,74 +242,25 @@
 }
 
 
-.nineties_img {
-    // wrapper for item view content
-    &_item {
-        //position: relative;
 
-        img {
-            float: left;
-            padding: 0.5rem 0 0.5rem 0.5rem;
-        }
-        // parent container of the scrolling section
-        &_scroll_container {
-            float: none;
-            //position: absolute;
-            //top: 0;
-            //right: 0;
-            //bottom: 0;
-            box-sizing: border-box;
-            //width: calc(~"100% - 23rem");
-            width: 100%;
-            //overflow-y: visible;
-        }
-        // this is the scrollable section for the actual content
-        &_scroll {
-            &:after {
-                content: "";
-                display: block;
-                height: 5.5rem;
-                clear: both;
-            }
-        }
-        // wrapper for json description in item view content
-        &_description {
-            p {
-                .font_standard;
-                margin-bottom: 2rem;
-
-                &:last-of-type {
-                    margin-bottom: 1rem;
-                }
-            }
-        }
-    }
+// parent container of the scrolling section
+.nineties_img_item_scroll_container {
+    float: none;
+    //position: absolute;
+    //top: 0;
+    //right: 0;
+    //bottom: 0;
+    box-sizing: border-box;
+    //width: calc(~"100% - 23rem");
+    width: 100%;
+    //overflow-y: visible;
 }
 
-
-.nineties_img_navigator {
-    position: absolute;
-    right: -0.8rem;
-    bottom: -0.8rem;
-    width: 12.4rem;
-    height: 3.8rem;
-    padding: 0.8rem 0.6rem 0.6rem 0.8rem;
-    z-index: 1;
-    background-color: #CCC;
-    background-repeat: no-repeat;
-    background-image:
-    @lg000, @lg000,
-    @lgFFF, @lgFFF;
-    background-size:
-    13.2rem 0.2rem, 0.2rem 4.6rem,
-    13.4rem 0.4rem, 0.4rem 4.8rem;
-    background-position: 0 0;
-}
 
 .nineties_img_resizer {
     position: absolute;
-    right: -0.4rem;
-    bottom: -0.4rem;
+    right: 1.0rem;
+    bottom: 1.0rem;
     width: 3rem;
     height: 3rem;
     padding: 0.4rem 0rem 0rem 0.4rem;
@@ -440,173 +287,15 @@
         position: relative;
         background-position: 0.4rem -15.6rem;
     }
-
-    &.previous, &.next {
-        width: 3.8rem;
-        height: 3.8rem;
-        background-color: #CCC;
-        position: relative;
-
-        &:hover {
-            background-color: #BBB;
-            cursor: pointer;
-        }
-        &:active {
-            background-color: #CCC;
-
-            &:after {
-                display: block;
-            }
-        }
-        &:after {
-            position: absolute;
-            width: 3.4rem;
-            height: 3.4rem;
-            top: 0.2rem;
-            left: 0.2rem;
-            content: "";
-            display: none;
-            background-repeat: no-repeat;
-            background-image:
-            @lg999, @lg999,
-            @lgFFF, @lgFFF;
-            background-size:
-            3.2rem 0.2rem, 0.2rem 3.2rem,
-            3.2rem 0.2rem, 0.2rem 3.2rem;
-            background-position:
-            0 0, 0 0,
-            0.2rem 3.2rem, 3.2rem 0.2rem;
-        }
-    }
-    &.previous {
-        background-position: 0 -8rem;
-    }
-    &.next {
-        background-position: -4rem -8rem;
-    }
-    &.counter {
-        width: 4.4rem;
-        height: 3.4rem;
-        border: 0.2rem solid #777;
-        background-color: #BBB;
-        text-align: center;
-        line-height: 3.4rem;
-        font-size: 1.8rem;
-    }
-}
-
-
-
-
-@list_box_size_small: 14.4rem;
-
-.ninties_img_listing {
-    ul {
-        margin: 0.2rem 0 0 0.2rem;
-    }
-    li {
-        float: left;
-        width: 15rem;
-        list-style-type: none;
-        margin: 0.8rem 0 0 0.8rem;
-
-        &:hover {
-            cursor: pointer;
-            width: 15.2rem;
-
-            div {
-                //margin: 0rem;
-                border-color: @color_link_hover;
-                border-width: 0.4rem;
-            }
-            p {
-                color: @color_link_hover;
-                margin-top: -0.1rem;
-            }
-        }
-        @media only screen and (min-width: 410px) {
-            &:nth-child(2n + 1) {
-                clear: both;
-            }
-        }
-        @media only screen and (min-width: 560px) {
-            &:nth-child(2n + 1) {
-                clear: none;
-            }
-            &:nth-child(3n + 1) {
-                clear: both;
-            }
-        }
-        @media @da_small {
-            &:nth-child(3n + 1) {
-                clear: none;
-            }
-            &:nth-child(4n + 1) {
-                clear: both;
-            }
-        }
-        div {
-            width: @list_box_size_small;
-            height: @list_box_size_small;
-            margin: 0.1rem 0.1rem 0 0.1rem;
-            border: 0.3rem solid @color_link_default;
-            position: relative;
-            overflow: hidden;
-
-            img {
-                position: absolute;
-                width: @list_box_size_small;
-                height: @list_box_size_small * 16 / 9;
-                left: 0;
-            }
-        }
-        p {
-            color: @color_link_default;
-            text-decoration: underline;
-        }
-        &#listing- {
-            &macarena {
-                img {
-                    top: -100% * (0 / 8);
-                }
-            }
-            &notorious-big,
-            &kelly-kapowski,
-            &titanic,
-            &x-files {
-                img {
-                    top: -100% * (1 / 8);
-                }
-            }
-            &princess-diana {
-                img {
-                    top: -100% * (2 / 8);
-                }
-            }
-            &motorola-startac,
-            &tamagotchi {
-                img {
-                    top: -100% * (4 / 8);
-                }
-            }
-        }
-
-    }
-}
-
-
-.mac_os8_scrollable {
-    overflow-y: scroll;
-    padding-right: 3rem;
 }
 
 // scroll stuff
 .mac_os8_scroll_bar {
     display: none;
     position: absolute;
-    top: 2.8rem;
-    right: 0;
-    bottom: 5.8rem;
+    top: 3.8rem;
+    right: 1.4rem;
+    bottom: 7.2rem;
     border-left: 0.2rem solid #000;
     width: 2.8rem;
     background-color: #AAA;
@@ -736,4 +425,3 @@
         }
     }
 }
-
