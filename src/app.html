@@ -308,14 +308,8 @@ owl: http://www.w3.org/2002/07/owl#">
                     <li>Finally, if they are alone and you are reasonably sure they will harm themselves, then call emergency services.</li>
                 </ol>
             </div>
+
             <hr class="rainbow_gradient"/>
-            <div class="centered_image with_border">
-                <img src="<%= htmlWebpackPlugin.options.paths.assetsImages %>homepage/irene_430x464.png"
-                     width="215"
-                     height="232"/>
-            </div>
-
-
 
             <div class="nineties_img_box">
                 <div class="bellmaker_container" ref="ninetiesBox">
@@ -334,7 +328,7 @@ owl: http://www.w3.org/2002/07/owl#">
                             onClick={this.goBackToHomepage} />
                             -->
                         <div class="nineties_img_head_text free_text pictures">
-                            <span>Pictures</span>
+                            <span>Empty Box</span>
                         </div>
                     </div>
                     <div class="nineties_img_container">
@@ -344,19 +338,16 @@ owl: http://www.w3.org/2002/07/owl#">
                                 id="nineties_img_item_scroll_container"
                                 onScroll={this.handleScroll.bind(this)}
                                 ref="scrollBoxContainer">
-    
-                            <img src="" width={225} height={400}/>
-    
                             <section class="nineties_img_item_scroll"
                                         id="nineties_img_item_scroll"
                                 ref="scrollBox">
     
-                                <h1>title</h1>
     
-                                <span class="nineties_img_item_description">foo</span>
-    
+                                <!--
                                 <div class="mac_os8_button">
-                                    <a href="">View More...</a></div>
+                                    <a href="">View More...</a>
+                                </div>
+                                -->
                             </section>
                         </div>
     
@@ -368,6 +359,10 @@ owl: http://www.w3.org/2002/07/owl#">
                             <div class="mac_os8_scroll_button mac_os8_sprites"
                                     onMouseDown="this.startDragScrollButton.bind(this)"
                                     ref="macScrollButton" style=""></div>
+                        </div>
+                        <div class="nineties_img_resizer">
+                            <a class="nineties_img_nav_button mac_os8_sprites resize"
+                                onClick="this.handleClick.bind(this, 'prev')"></a>
                         </div>
         
                         <!--
@@ -387,6 +382,12 @@ owl: http://www.w3.org/2002/07/owl#">
                         </div>
                     </div>
                 </div>
+            </div>
+            <hr class="rainbow_gradient"/>
+            <div class="centered_image with_border">
+                <img src="<%= htmlWebpackPlugin.options.paths.assetsImages %>homepage/irene_430x464.png"
+                     width="215"
+                     height="232"/>
             </div>
         </section>
     </article>
