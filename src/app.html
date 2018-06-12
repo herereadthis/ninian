@@ -314,6 +314,80 @@ owl: http://www.w3.org/2002/07/owl#">
                      width="215"
                      height="232"/>
             </div>
+
+
+
+            <div class="nineties_img_box">
+                <div class="bellmaker_container" ref="ninetiesBox">
+                    <div class="nineties_img_header">
+                        <div
+                            class="nineties_img_head_button mac_os8_sprites close"
+                            onClick={this.goBackToHomepage}></div>
+                        <div
+                            class="nineties_img_head_button mac_os8_sprites resize"
+                            onClick={this.goBackToHomepage}></div>
+                        <div
+                            class="nineties_img_head_button mac_os8_sprites minimize"
+                            onClick={this.goBackToHomepage}></div>
+                            <!--
+                        <div class="nineties_img_head_text mac_os8_sprites pictures"
+                            onClick={this.goBackToHomepage} />
+                            -->
+                        <div class="nineties_img_head_text free_text pictures">
+                            <span>Pictures</span>
+                        </div>
+                    </div>
+                    <div class="nineties_img_container">
+
+                    <div class="nineties_img_item clear_floats">
+                        <div class="nineties_img_item_scroll_container"
+                                id="nineties_img_item_scroll_container"
+                                onScroll={this.handleScroll.bind(this)}
+                                ref="scrollBoxContainer">
+    
+                            <img src="" width={225} height={400}/>
+    
+                            <section class="nineties_img_item_scroll"
+                                        id="nineties_img_item_scroll"
+                                ref="scrollBox">
+    
+                                <h1>title</h1>
+    
+                                <span class="nineties_img_item_description">foo</span>
+    
+                                <div class="mac_os8_button">
+                                    <a href="">View More...</a></div>
+                            </section>
+                        </div>
+    
+                        <div class="mac_os8_scroll_bar scroll_enabled">
+                            <div onClick="this.tabScroll.bind(this, 'up')"
+                                    class="mac_os8_scroll_tab mac_os8_sprites up"></div>
+                            <div onClick="this.tabScroll.bind(this, 'down')"
+                                    class="mac_os8_scroll_tab mac_os8_sprites down"></div>
+                            <div class="mac_os8_scroll_button mac_os8_sprites"
+                                    onMouseDown="this.startDragScrollButton.bind(this)"
+                                    ref="macScrollButton" style=""></div>
+                        </div>
+        
+                        <!--
+                        <div class="nineties_img_navigator">
+                            <a class="nineties_img_nav_button mac_os8_sprites previous"
+                                onClick="this.handleClick.bind(this, 'prev')"></a>
+    
+                            <div class="nineties_img_nav_button counter">
+                                <span>1</span>
+                                <span>/</span>
+                                <span>8</span>
+                            </div>
+                            <a class="nineties_img_nav_button mac_os8_sprites next"
+                                onClick="this.handleClick.bind(this, 'next')"></a>
+                        </div>
+                        -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </article>
 
