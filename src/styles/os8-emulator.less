@@ -20,62 +20,57 @@
 @lg66C: linear-gradient(0deg, #66C 0%, #66C 100%);
 
 .nineties_img_box {
-    .bellmaker_container {
-        position: relative;
+    position: relative;
+    background-image:
+        @lgFFF,
+        @lg000,
+        @lg999, @lg999,
+        @lgFFF, @lgFFF,
+        @lgFFF, @lgFFF,
+        @lg999, @lg999,
+        @lg000, @lg000, @lg000, @lg000,
+        @lg000, @lg000,
+        @lgCCC;
+    background-size:
+        calc(~"100% - 2.6rem") calc(~"100% - 5.8rem"),
+        calc(~"100% - 2.2rem") calc(~"100% - 5.4rem"),
+        calc(~"100% - 2.0rem") 0.2rem, 0.2rem calc(~"100% - 5.2rem"),
+        calc(~"100% - 2.0rem") 0.2rem, 0.2rem calc(~"100% - 5.2rem"),
+        calc(~"100% - 0.8rem") 0.2rem, 0.2rem calc(~"100% - 0.8rem"),
+        calc(~"100% - 0.8rem") 0.2rem, 0.2rem calc(~"100% - 0.8rem"),
+        100% 0.2rem, 0.2rem 100%, 100% 0.2rem, 0.2rem 100%,
+        100% 0.2rem, 0.2rem 100%,
+        calc(~"100% - 0.6rem") calc(~"100% - 0.6rem");
+    background-position:
+        1.2rem 4.4rem,
+        1.0rem 4.2rem,
+        0.8rem 4.0rem, 0.8rem 4.0rem,
+        0.8rem calc(~"100% - 1.0rem"), calc(~"100% - 1.0rem") 4.2rem,
+        0.2rem 0.2rem, 0.2rem 0.2rem,
+        0.4rem calc(~"100% - 0.4rem"), calc(~"100% - 0.4rem") 0.4rem,
+        -0.2rem 0, 0 -0.2rem, -0.2rem calc(~"100% - 0.2rem"), calc(~"100% - 0.2rem") -0.2rem,
+        0.4rem 100%, 100% 0.4rem,
+        0.2rem 0.2rem;
 
-        @media @da_baseline {
-            width: 100%;
-        }
-        @media @da_small {
-            width: @pw_small;
-            margin: 0 auto;
-        }
-        @media @da_medium {
-            width: @pw_medium;
-        }
-        @media @da_large {
-            width: @pw_large;
-        }
-        @media @da_x_large {
-            width: @pw_x_large;
-        }
+    background-repeat: no-repeat;
 
-        background-image:
-            @lgFFF,
-            @lg000,
-            @lg999, @lg999,
-            @lgFFF, @lgFFF,
-            @lgFFF, @lgFFF,
-            @lg999, @lg999,
-            @lg000, @lg000, @lg000, @lg000,
-            @lg000, @lg000,
-            @lgCCC;
-
-        background-size:
-            calc(~"100% - 2.6rem") calc(~"100% - 5.8rem"),
-            calc(~"100% - 2.2rem") calc(~"100% - 5.4rem"),
-            calc(~"100% - 2.0rem") 0.2rem, 0.2rem calc(~"100% - 5.2rem"),
-            calc(~"100% - 2.0rem") 0.2rem, 0.2rem calc(~"100% - 5.2rem"),
-            calc(~"100% - 0.8rem") 0.2rem, 0.2rem calc(~"100% - 0.8rem"),
-            calc(~"100% - 0.8rem") 0.2rem, 0.2rem calc(~"100% - 0.8rem"),
-            100% 0.2rem, 0.2rem 100%, 100% 0.2rem, 0.2rem 100%,
-            100% 0.2rem, 0.2rem 100%,
-            calc(~"100% - 0.6rem") calc(~"100% - 0.6rem");
-
-        background-position:
-            1.2rem 4.4rem,
-            1.0rem 4.2rem,
-            0.8rem 4.0rem, 0.8rem 4.0rem,
-            0.8rem calc(~"100% - 1.0rem"), calc(~"100% - 1.0rem") 4.2rem,
-            0.2rem 0.2rem, 0.2rem 0.2rem,
-            0.4rem calc(~"100% - 0.4rem"), calc(~"100% - 0.4rem") 0.4rem,
-            -0.2rem 0, 0 -0.2rem, -0.2rem calc(~"100% - 0.2rem"), calc(~"100% - 0.2rem") -0.2rem,
-            0.4rem 100%, 100% 0.4rem,
-            0.2rem 0.2rem;
-
-        background-repeat: no-repeat;
+    @media @da_baseline {
+        width: 100%;
     }
-    h1, p, span, a {
+    @media @da_small {
+        width: @pw_small;
+        margin: 0 auto;
+    }
+    @media @da_medium {
+        width: @pw_medium;
+    }
+    @media @da_large {
+        width: @pw_large;
+    }
+    @media @da_x_large {
+        width: @pw_x_large;
+    }
+    h1, h3, h4, p, span, a, li {
         font-family: "charcoal";
         font-weight: 400;
     }
@@ -194,55 +189,6 @@
     overflow: hidden;
 }
 
-.mac_os8_button {
-    width: 17rem;
-    height: 4.6rem;
-    position: static;
-    margin-right: 1rem;
-
-    a {
-        position: relative;
-        width: 13rem;
-        display: block;
-        line-height: 4.6rem;
-        height: 4.6rem;
-        font-size: 1.6rem;
-        text-align: center;
-        margin: 0 2rem;
-        letter-spacing: 0.1rem;
-        background-repeat: repeat-x;
-        background-image: @lgFFF, @lg000, @lgFFF, @lg000;
-        background-size: 1rem 2.6rem, 1rem 3.0rem, 1rem 3.4rem, 1rem 4.6rem;
-        background-position: 0 1.0rem, 0 0.8rem, 0 0.6rem, 0 0rem;
-        color: #000;
-
-        &:hover {
-            color: #666;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        &:before, &:after {
-            .mac_os8_sprites;
-            display: block;
-            content: "";
-            width: 2rem;
-            height: 4.6rem;
-            top: 0;
-            position: relative;
-        }
-        &:before {
-            left: -2rem;
-            background-position: -8rem -7.4rem;
-        }
-        &:after {
-            right: -2rem;
-            background-position: -10rem -7.4rem;
-        }
-    }
-}
-
-
-
 // parent container of the scrolling section
 .nineties_img_item_scroll_container {
     float: none;
@@ -255,7 +201,6 @@
     width: 100%;
     //overflow-y: visible;
 }
-
 
 .nineties_img_resizer {
     position: absolute;

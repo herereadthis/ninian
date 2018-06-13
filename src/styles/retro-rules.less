@@ -5,24 +5,26 @@
 #retro_rules {
     background-image: url("@{cssImagePath}thetropics_shores_9189_cartoon1_315x237.gif");
 
-    h3 {
-        padding: 2rem 0;
-        font: normal normal bold 2.4rem/2.8rem @serif;
-    }
-    li {
-        padding-left: 4rem;
-        font: normal normal bold 1.6rem/1.6rem @serif;
-    }
-
-    @media @da_large {
+    .geocities_me {
         h3 {
-            padding: 2.4rem 0;
-            font-size: 3rem;
-            line-height: 4rem;
+            padding: 2rem 0;
+            font: normal normal bold 2.4rem/2.8rem @serif;
         }
         li {
-            font-size: 2rem;
-            line-height: 2rem;
+            padding-left: 4rem;
+            font: normal normal bold 1.6rem/1.6rem @serif;
+        }
+
+        @media @da_large {
+            h3 {
+                padding: 2.4rem 0;
+                font-size: 3rem;
+                line-height: 4rem;
+            }
+            li {
+                font-size: 2rem;
+                line-height: 2rem;
+            }
         }
     }
 
@@ -35,6 +37,16 @@
         }
         h3 {
             font-size: 2.1rem;
+            line-height: 3.5rem;
+        }
+        h4, p, li {
+            font-size: 1.4rem;
+            line-height: 2.1rem;
+        }
+        h4 {
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.4rem;
             line-height: 2.8rem;
         }
         p, li {
@@ -43,7 +55,7 @@
             line-height: 2.1rem;
         }
         ol, p {
-            padding-bottom: 2.1rem;
+            padding-bottom: 1.4rem;
             &:last-child {
                 padding-bottom: 0;
             }
@@ -81,7 +93,10 @@
 
     .depression-help {
         padding: 1rem;
-        h3, p, li {
+        h3 {
+            text-align: center;
+        }
+        p, li {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
     }
