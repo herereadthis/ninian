@@ -50,11 +50,7 @@ owl: http://www.w3.org/2002/07/owl#">
     <link rel="foaf:primaryTopic" type="application/rdf+xml" title="FOAF" href="http://herereadthis.com/build/xml/foaf.rdf" />
     -->
     <base href="/"/>
-    <!--
-    <link rel="canonical" href="{{ location }}" />
-    -->
-    <!--<link rel="stylesheet" href="/vendors.css" />-->
-    <!--<link rel="stylesheet" href="/app.css" />-->
+    <link rel="canonical" href="<%= htmlWebpackPlugin.options.paths.site %>" />
     <!--<link rel="icon" href="favicon.ico" type="image/x-icon" />-->
 </head>
 <body>
@@ -114,7 +110,7 @@ owl: http://www.w3.org/2002/07/owl#">
                     join <span property="foaf:topic_interest" content="Burning Man">Burner festivals</span>,
                     and sometimes practice <span property="foaf:topic_interest">Kyudo</span>, which is Japanese archery.
                 </p>
-                <a class="popup_button retro_spriter popup_close">Close</a>
+                <a class="popup_button retro_spriter popup_close"><span></span></a>
                 <a class="popup_button retro_spriter popup_resize">Resize</a>
                 <a class="popup_button retro_spriter popup_minimize">Minimize</a>
             </div>
@@ -130,6 +126,12 @@ owl: http://www.w3.org/2002/07/owl#">
         <section class="bellmaker_container">
 
             <div class="fantasy_box"></div>
+
+            <div class="win95_scrollbar">
+                <div class="nav_button"></div>
+                <div class="scroll_space" style="height: 10rem;"></div>
+                <div class="nav_button"></div>
+            </div>
 
             <div class="centered_image">
                 <div data-sprite="netscape_88x31"></div>
@@ -385,7 +387,7 @@ owl: http://www.w3.org/2002/07/owl#">
             </div>
             <div class="frames_nav_column frames_column">
                 <section>
-                    <p style={style1}>No duh!</p>
+                    <p>No duh!</p>
                 </section>
             </div>
             <div class="frames_main_column frames_column">

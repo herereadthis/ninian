@@ -1,0 +1,38 @@
+@df: #DFDFDF;
+@ff: #FFFFFF;
+@c0: #C0C0C0;
+@00: #000000;
+@80: #808080;
+
+
+
+@dfbg: linear-gradient(0deg, @df 0%, @df 100%);
+@ffbg: linear-gradient(0deg, @ff 0%, @ff 100%);
+@c0bg: linear-gradient(0deg, @c0 0%, @c0 100%);
+@00bg: linear-gradient(0deg, @00 0%, @00 100%);
+@80bg: linear-gradient(0deg, @80 0%, @80 100%);
+
+.win95_scrollbar {
+    width: 3.2rem;
+
+    .nav_button {
+        width: 3.2rem;
+        height: 3.2rem;
+
+        background-image: @c0bg, @ffbg, @80bg, @dfbg, @00bg;
+        background-size: 2.4rem 2.4rem, 2.6rem 2.6rem, 2.8rem 2.8rem, 3.0rem 3.0rem, 3.2rem 3.2rem;
+        background-position: 0.4rem 0.4rem, 0.2rem 0.2rem, 0.2rem 0.2rem, 0 0, 0, 0;
+        background-repeat: no-repeat;
+    }
+
+    .scroll_space {
+        background-image: 
+            linear-gradient(45deg, @c0 25%, transparent 25%),
+            linear-gradient(-45deg, @c0 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, @c0 75%),
+            linear-gradient(-45deg, transparent 75%, @c0 75%);
+        background-size: 0.4rem 0.4rem;
+        background-position: 0 0, 0 0.2rem, 0.2rem -0.2rem, -0.2rem 0px;
+        background-color: @ff;
+    }
+}
