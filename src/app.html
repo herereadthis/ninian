@@ -75,41 +75,23 @@ owl: http://www.w3.org/2002/07/owl#">
                 <h1 id="color-shift-title-1"
                     data-color-shift-start="F00"
                     data-color-shift-end="FF9600">Here, Read This</h1>
-                <p typeof="foaf:Person" resource="#/me/" id="banner_description">
-                    <span>Hi! My Name is </span>
-                    <span property="foaf:name">
-                        <span property="foaf:givenname" content="James"></span>
-                        <span property="foaf:nick">Jimmy</span>
-                        <span property="foaf:family_name">Ha</span>
+                <div id="image_faker"></div>
+                <p>
+                    <span>
+                        Hi! My name is Jimmy Ha!
+                        I live in Northern Virginia, zone 7B.
+                        Native perennials and monarch caterpillers grow in my garden.
+                        I like to take pictures with film cameras   .
+                        I make songs on synthesizers.
+                        If you want to buy me a present, here&rsquo;s a <a href="./wishlist/">gift guide</a>.
+                        I&rsquo;m also a full-stack web developer with experience on enterprise applications.
                     </span>
-                    <span property="foaf:givenname" content="James"></span>
-                    <span property="foaf:logo" content="./images/branding/herereadthis_logo.svg"></span>
-                    <span> and I </span>
-                    <span property="v:title" content="UX Web Developer">make web pages</span>,
-                    <span resource="<%= htmlWebpackPlugin.options.paths.site %>" property="v:url foaf:homepage"></span>
-                    specializing in React | Redux | Hapi frameworks.
-                    I live and play in the
-                    <span property="v:Postal" resource="#/me/address/"
-                          typeof="v:Address">
-                         <span property="v:locality" content="Washington"></span>
-                         <span property="v:region">DC</span>
-                    </span>
-                    <span> metro area. </span>
-                    <span property="foaf:based_near" resource="#/me/geo/"
-                          typeof="geo:point"
-                          prefix="geo: http://www.w3.org/2003/01/geo/wgs84_pos#">
-                         <span property="geo:lat" content="38.886757"></span>
-                         <span property="geo:long" content="-77.041626"></span>
-                    </span>
-                    I&rsquo;m really into (analog) film
-                    <span property="foaf:topic_interest" content="photography">photography</span>
-                    and you can see my pictures on my <a href="https://www.instagram.com/herereadthis/">Instagram</a>.
-                    I also
-                    <span property="foaf:topic_interest" content="gardening">grow roses</span>,
-                    <span property="foaf:topic_interest" content="baking">bake pastries</span>,
-                    join <span property="foaf:topic_interest" content="Burning Man">Burner festivals</span>,
-                    and sometimes practice <span property="foaf:topic_interest">Kyudo</span>, which is Japanese archery.
                 </p>
+                <p>
+                    Pictures: <a href="https://www.instagram.com/herereadthis/">Instagram</a> | 
+                    Music: <a href="https://www.youtube.com/channel/UCph9owDhfMcJX40CPC2i7SQ">Youtube</a>
+                </p>
+                <div class="clear_floats"></div>
                 <a class="popup_button retro_spriter popup_close"><span></span></a>
                 <a class="popup_button retro_spriter popup_resize">Resize</a>
                 <a class="popup_button retro_spriter popup_minimize">Minimize</a>
@@ -126,12 +108,13 @@ owl: http://www.w3.org/2002/07/owl#">
         <section class="bellmaker_container">
 
             <div class="fantasy_box"></div>
-
+            <!--
             <div class="win95_scrollbar">
                 <div class="nav_button"></div>
                 <div class="scroll_space" style="height: 10rem;"></div>
                 <div class="nav_button"></div>
             </div>
+            -->
 
             <div class="centered_image">
                 <div data-sprite="netscape_88x31"></div>
@@ -407,11 +390,10 @@ owl: http://www.w3.org/2002/07/owl#">
                     <p>Moral of the story: never swim during duck season</p>
                 </section>
                 <section>
-                    <ul class="social_fu" resource="#/me/" typeof="foaf:Person" data-module="social_fu">
-                        <li property="foaf:account" resource="#/me/instagram/" typeof="foaf:OnlineAccount">
-                            <span property="foaf:accountServiceHomepage" resource="https://www.instagram.com/"><span>Instagram</span></span>
-                            <a rel="foaf:homepage" href="https://www.instagram.com/herereadthis/"
-                                property="foaf:accountName">herereadthis</a> 
+                    <ul id="social_fu">
+                        <li>
+                            <span><span>Instagram</span></span>
+                            <a href="https://www.instagram.com/herereadthis/">herereadthis</a> 
                         </li>
                         <li property="foaf:account" resource="#/me/twitter/" typeof="foaf:OnlineAccount">
                             <span property="foaf:accountServiceHomepage" resource="https://twitter.com/"><span>Twitter</span></span>
