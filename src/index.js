@@ -1,33 +1,32 @@
-import './app.less';
+const ColorShift = require('./classes/color-shift');
+const HitCounter = require('./classes/hit-counter');
+const ImageSelector = require('./classes/image-selector');
+const RileyFuArt = require('./classes/riley-fu-art');
+const SimpleDateTime = require('./classes/simple-date-time');
 
-import {
+const HomepageConstants = require('./constants/homepage-constants');
+
+const ParallaxScroll = require('./utils/parallax-scroll');
+const StorageUtils = require('./utils/storage-utils');
+
+const {
     BANNER_IMAGE_PATH,
     NINETIES_IMG
-} from './constants/homepage-constants';
-
-import ColorShift from './classes/color-shift';
-import ImageSelector from './classes/image-selector';
-import RileyFuArt from './classes/riley-fu-art';
-import SimpleDateTime from './classes/simple-date-time';
-
-import {
+} = HomepageConstants;
+const {
     getHitCounterWidth,
     makeNumbers,
     getHitCounterStorageValidity,
     resetHitCounterParamsStorage
-} from './classes/hit-counter';
-
-
-
-import {
-    clearStorageLink
-} from './utils/storage-utils';
-
-import {
+} = HitCounter;
+const {clearStorageLink} = StorageUtils;
+const {
     moveBackground,
     killScrollListener
-} from './utils/parallax-scroll';
+} = ParallaxScroll;
 
+// import './app.less';
+const CSS = require('./app.less');
 
 // parallax scroll
 const parallaxScroll = document.getElementsByClassName('parallax_scroll');

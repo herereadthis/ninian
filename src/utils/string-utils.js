@@ -1,4 +1,4 @@
-export const parseJsonOrReturnString = (str) => {
+const parseJsonOrReturnString = (str) => {
     let result;
     try {
         result = JSON.parse(str);
@@ -13,7 +13,7 @@ export const parseJsonOrReturnString = (str) => {
 };
 
 
-export const leadDecimal = (num, places = 2) => {
+const leadDecimal = (num, places = 2) => {
     let zeroes = '';
     let newNum = num.toString();
     let _t = 0;
@@ -25,4 +25,9 @@ export const leadDecimal = (num, places = 2) => {
         _t = _t + 1;
     }
     return newNum;
+};
+
+module.exports = {
+    parseJsonOrReturnString,
+    leadDecimal
 };

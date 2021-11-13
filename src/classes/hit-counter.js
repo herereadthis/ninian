@@ -1,6 +1,8 @@
-import _ from '../utils/lodash-utils';
+const _ = require('../utils/lodash-utils');
+const HitCounterConstants = require('../constants/hit-counter-constants');
+const StorageUtils = require('../utils/storage-utils');
 
-import {
+const {
     colorOn,
     colorOff,
     numWidth,
@@ -8,11 +10,8 @@ import {
     hitCounterParamsKey,
     hitCounterDigitStoragePrefix,
     lcd
-} from '../constants/hit-counter-constants';
-
-import {
-    LocalStorageMethods
-} from '../utils/storage-utils';
+} = HitCounterConstants;
+const {LocalStorageMethods} = StorageUtils;
 
 const hitCounterParams = [
     colorOff,
@@ -69,14 +68,14 @@ const makeCanvasBG = (digit, hitCounterValidity) => {
     return result;
 };
 
-export const getHitCounterWidth = (figures) => {
+const getHitCounterWidth = (figures) => {
     var minWidth = 0.4 + 2.2 * figures;
     minWidth = parseFloat(minWidth.toPrecision(12));
 
     return `${minWidth}rem`;
 };
 
-export const makeNumbers = (element, pageHits, figures, hitCounterValidity) => {
+const makeNumbers = (element, pageHits, figures, hitCounterValidity) => {
     // create an array out of the page hits, each item is a number
     let numArray = pageHits.toString().split('');
 
@@ -98,7 +97,7 @@ export const makeNumbers = (element, pageHits, figures, hitCounterValidity) => {
     });
 };
 
-export const getHitCounterStorageValidity = () => {
+const getHitCounterStorageValidity = () => {
     let result = true;
     let storedHitCounterParams = LocalStorageMethods.get(hitCounterParamsKey);
 
@@ -111,6 +110,13 @@ export const getHitCounterStorageValidity = () => {
     return result;
 };
 
-export const resetHitCounterParamsStorage = () => {
+const resetHitCounterParamsStorage = () => {
     LocalStorageMethods.set(hitCounterParamsKey, JSON.stringify(hitCounterParams));
+};
+
+module.exports = {
+    getHitCounterWidth,
+    makeNumbers,
+    getHitCounterStorageValidity,
+    resetHitCounterParamsStorage
 };

@@ -1,6 +1,6 @@
-import _ from './lodash-utils';
+const _ = require('./lodash-utils');
 
-export const getBgPosition = (bgStyle) => {
+const getBgPosition = (bgStyle) => {
     var bgPositions = bgStyle.split(' ');
 
     // you can state background position as one value that doubles for x/y.
@@ -27,7 +27,7 @@ export const getBgPosition = (bgStyle) => {
     });
 };
 
-export const setBackground = (elements) => {
+const setBackground = (elements) => {
     const dScroll = document.documentElement.scrollTop;
     const wHeight = window.innerHeight;
 
@@ -56,7 +56,7 @@ export const setBackground = (elements) => {
     });
 };
 
-export const moveBackground = (parallaxEl) => {
+const moveBackground = (parallaxEl) => {
     var getParallaxSpeed, parallaxRef, bgPosition, _l, bgStyle = [];
 
     let elements = [];
@@ -86,6 +86,13 @@ export const moveBackground = (parallaxEl) => {
     window.addEventListener('scroll', setBackground.bind(null, elements), true);
 };
 
-export const killScrollListener = () => {
+const killScrollListener = () => {
     window.removeEventListener('scroll', setBackground, true);
+};
+
+module.exports = {
+    getBgPosition,
+    setBackground,
+    moveBackground,
+    killScrollListener
 };

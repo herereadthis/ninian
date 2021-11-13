@@ -1,13 +1,13 @@
-export const colorOn = 'rgba(0,255,0,1)';
-export const colorOff = 'rgba(0,255,0,0.18)';
+const colorOn = 'rgba(0,255,0,1)';
+const colorOff = 'rgba(0,255,0,0.18)';
 
-export const numWidth = 120;
-export const numHeight = 240;
+const numWidth = 120;
+const numHeight = 240;
 
-export const hitCounterParamsKey = 'hitDigitParams';
-export const hitCounterDigitStoragePrefix = 'hitDigit';
+const hitCounterParamsKey = 'hitDigitParams';
+const hitCounterDigitStoragePrefix = 'hitDigit';
 
-export const lcd = [
+const lcd = [
     {
         // top horizontal bar
         key: 'tb',
@@ -52,4 +52,12 @@ export const lcd = [
     }
 ];
 
-
+module.exports = {
+    colorOn,
+    colorOff,
+    numWidth,
+    numHeight,
+    hitCounterParamsKey,
+    hitCounterDigitStoragePrefix,
+    lcd
+}

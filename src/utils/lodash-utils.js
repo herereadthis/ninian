@@ -1,11 +1,11 @@
-import isArray from 'lodash/isArray';
-import isNaN from 'lodash/isNaN';
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import isEqual from 'lodash/isEqual';
-import isString from 'lodash/isString';
+const isArray = require('lodash/isArray');
+const isNaN = require('lodash/isNaN');
+const isNil = require('lodash/isNil');
+const isEmpty = require('lodash/isEmpty');
+const isEqual = require('lodash/isEqual');
+const isString = require('lodash/isString');
 
-const _ = {
+module.exports = {
     isArray,
     isEmpty,
     isEqual,
@@ -13,5 +13,3 @@ const _ = {
     isNil,
     isString
 };
-
-export default _;

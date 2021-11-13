@@ -1,12 +1,11 @@
-export const BANNER_IMAGE_PATH = 'http://assets.herereadthis.com/images/banner_image/';
+const BANNER_IMAGE_PATH = 'http://assets.herereadthis.com/images/banner_image/';
 
-
-export const NINETIES_IMG = {
+const NINETIES_IMG = {
     DATA_KEY: 'ninetiesImg',
     HISTORY_KEY: 'ninetiesImgHistory'
 };
 
-export const NINETIES_IMAGES_DATA = [  
+const NINETIES_IMAGES_DATA = [  
     {  
         img: 'barbie_girl.jpg',
         thumb: 'barbie_girl-thumb.jpg',
@@ -86,3 +85,9 @@ export const NINETIES_IMAGES_DATA = [
         date: '1997-12-19'
     }
 ];
+
+module.exports = {
+    BANNER_IMAGE_PATH,
+    NINETIES_IMG,
+    NINETIES_IMAGES_DATA
+}

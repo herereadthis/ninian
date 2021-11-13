@@ -1,9 +1,8 @@
-import _ from '../utils/lodash-utils';
+const _ = require('../utils/lodash-utils');
 
 const SHORTHAND_HEX_REGEX = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 
-export default class ColorShift {
-
+class ColorShift {
     constructor(element, text, colorStart, colorEnd) {
         this.element = element;
         this.text = element.textContent;
@@ -76,3 +75,5 @@ export default class ColorShift {
         });
     }
 }
+
+module.exports = ColorShift;

@@ -1,8 +1,11 @@
-import _ from './lodash-utils';
-import {parseJsonOrReturnString} from './string-utils'
-import {APP_CACHE} from '../constants/app-constants';
+const _ = require('./lodash-utils');
+const StringUtils = require('./string-utils');
+const AppConstants = require('../constants/app-constants');
 
-export const LocalStorageMethods = {
+const {parseJsonOrReturnString} = StringUtils;
+const {APP_CACHE} = AppConstants;
+
+const LocalStorageMethods = {
     set: (key, value) => {
         localStorage[key] = value;
     },
@@ -15,7 +18,7 @@ export const LocalStorageMethods = {
     }
 };
 
-export const SessionStorageMethods = {
+const SessionStorageMethods = {
     set: (key, value) => {
         sessionStorage[key] = value;
     },
@@ -28,11 +31,11 @@ export const SessionStorageMethods = {
     }
 };
 
-export const resetCacheAge = () => {
+const resetCacheAge = () => {
     return LocalStorageMethods.set(APP_CACHE.AGE, new Date());
 };
 
-export const getCacheValidity = () => {
+const getCacheValidity = () => {
     let currentTime = new Date();
     let result = true;
 
@@ -52,9 +55,17 @@ export const getCacheValidity = () => {
     return result;
 };
 
-export const clearStorageLink = (domElement) => {
+const clearStorageLink = (domElement) => {
     domElement.addEventListener('click', function(event){
         event.preventDefault();
         localStorage.clear();
     });
+};
+
+module.exports = {
+    LocalStorageMethods,
+    SessionStorageMethods,
+    resetCacheAge,
+    getCacheValidity,
+    clearStorageLink
 };

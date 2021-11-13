@@ -1,6 +1,7 @@
-import _ from '../utils/lodash-utils';
+const _ = require('../utils/lodash-utils');
+const StringUtils = require('../utils/string-utils');
 
-import {leadDecimal} from '../utils/string-utils';
+const {leadDecimal} = StringUtils;
 
 const DATE_TIME_STRINGS = {
     fr: {
@@ -34,7 +35,7 @@ const KEY_REGEX = /^\w+$/;
 const CONCAT_REGEX = /(\w)\1*/g;
 const DEFAULT_DATE_FORMAT = 'yyyy-MM-dd';
 
-export default class SimpleDateTime {
+class SimpleDateTime {
     constructor(dateTime, locale = 'en') {
         this.locale = locale;
         this.dateTime = null;
@@ -157,3 +158,5 @@ export default class SimpleDateTime {
         return this.getDateValues(dateFormat);
     }
 }
+
+module.exports = SimpleDateTime;

@@ -1,10 +1,11 @@
-import _ from '../utils/lodash-utils';
+const _ = require('../utils/lodash-utils');
+const StorageUtils = require('../utils/storage-utils');
 
-import {
+const {
     LocalStorageMethods,
     getCacheValidity,
     resetCacheAge
-} from '../utils/storage-utils';
+} = StorageUtils;
 
 const rileyColors = {
     b1: '#0090D9', b2: '#388AED', b3: '#008DDB', b4: '#068ECA', b5: '#0097DF',
@@ -36,37 +37,9 @@ const colHeight = 8;
 
 const storeRileyShape = 'rileyRect';
 
-// will put in local storage the background image as Canvas, if either the
-// local storage does not exist or the cache has expired.
-const setCanvas = function() {
-    let cacheValid = getCacheValidity();
-    let storedCanvas = LocalStorageMethods.get(storeRileyShape);
-    let colLength = rileyColumns.length;
-
-    if (_.isNil(storedCanvas) || !cacheValid) {
-        let canvas = document.createElement('canvas');
-        canvas.width = colWidth * colLength;
-        canvas.height = colHeight;
-        let context = canvas.getContext('2d');
-
-        rileyColumns.forEach((column, key) => {
-            let getColor = rileyColors[column];
-            context.fillStyle = getColor;
-            context.fillRect(key * colWidth, 0, colWidth, colWidth);
-        });
-
-        storedCanvas = JSON.stringify(canvas.toDataURL('image/png'))
-
-        LocalStorageMethods.set(storeRileyShape, storedCanvas);
-        resetCacheAge();
-    }
-};
-
-
-export default class RileyFuArt {
-
+class RileyFuArt {
     constructor(domElement) {
-        this::setCanvas();
+        this.setCanvas();
         this.element = domElement;
         this.setRileyStyle();
 
@@ -113,4 +86,33 @@ export default class RileyFuArt {
         this.element.style.backgroundPosition = this.getBackgroundPosition();
         this.element.style.backgroundImage = 'url(' + backgroundImage + ')';
     };
+
+
+    // will put in local storage the background image as Canvas, if either the
+    // local storage does not exist or the cache has expired.
+    setCanvas() {
+        let cacheValid = getCacheValidity();
+        let storedCanvas = LocalStorageMethods.get(storeRileyShape);
+        let colLength = rileyColumns.length;
+
+        if (_.isNil(storedCanvas) || !cacheValid) {
+            let canvas = document.createElement('canvas');
+            canvas.width = colWidth * colLength;
+            canvas.height = colHeight;
+            let context = canvas.getContext('2d');
+
+            rileyColumns.forEach((column, key) => {
+                let getColor = rileyColors[column];
+                context.fillStyle = getColor;
+                context.fillRect(key * colWidth, 0, colWidth, colWidth);
+            });
+
+            storedCanvas = JSON.stringify(canvas.toDataURL('image/png'))
+
+            LocalStorageMethods.set(storeRileyShape, storedCanvas);
+            resetCacheAge();
+        }
+    }
 }
+
+module.exports = RileyFuArt;
