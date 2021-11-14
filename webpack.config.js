@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TransformFunctionBindPlugin = require('babel-plugin-transform-function-bind');
-const TransformRuntimePlugin = require('babel-plugin-transform-runtime');
+// const TransformFunctionBindPlugin = require('babel-plugin-transform-function-bind');
+// const TransformRuntimePlugin = require('babel-plugin-transform-runtime');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 // https://nolanlawson.com/2018/03/20/smaller-lodash-bundles-with-webpack-and-babel/
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
@@ -45,14 +45,14 @@ module.exports = {
                 use: {
 					loader: 'babel-loader',
 					options: {
-                        presets: ['env'],
-						plugins: [
-							TransformFunctionBindPlugin,
-                            ["transform-runtime", {
-                              "polyfill": false,
-                              "regenerator": true
-                            }]
-                        ]
+                        presets: ['env']
+						// plugins: [
+						// 	TransformFunctionBindPlugin,
+                        //     ["transform-runtime", {
+                        //       "polyfill": false,
+                        //       "regenerator": true
+                        //     }]
+                        // ]
                     }
 				}
 			},
